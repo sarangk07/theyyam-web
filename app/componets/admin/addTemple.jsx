@@ -106,7 +106,7 @@ function AddTemple() {
     return (
         <>
         <div className='flex flex-col items-center w-full'>
-            <h2 className='text-lg text-white'>Add Temples</h2>
+            <h2 className='text-lg text-zinc-700'>Add Temples</h2>
             {message && <p className="text-white">{message}</p>}
             <form className='flex bg-zinc-800 rounded-md p-4 text-zinc-100 flex-col items-center justify-center w-[80%] md:w-[60%]' onSubmit={handleSubmitTemple}>
                 <input className='bg-zinc-600 w-full m-1 p-1 rounded-md' type="text" placeholder='Name*' name='name1' value={templeFormData.name1 || ''} onChange={handleTempleChange} required />
@@ -128,7 +128,7 @@ function AddTemple() {
 
                 <div className='m-0 p-0 flex w-full'>
                     <div className='flex flex-col md:w-full w-[50%]'>
-                        <p>Popularity</p>
+                        <p>Popularity*</p>
                         <input className='bg-zinc-600  m-1 p-1 rounded-md' type="number" placeholder='Popularity*' name='popularity1' value={templeFormData.popularity1 || 0} onChange={handleTempleChange} required />
                     </div>
                     <div className='flex flex-col md:w-full w-[50%]'>

@@ -41,21 +41,26 @@ return (
 <>
     <div className="p-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
     {theyyam?.map((data)=>(
-        <div key={data.id} className="bg-zinc-800 p-4 rounded-md text-zinc-100">
-            <div className="border-b border-zinc-700">
+        <div key={data.id} className="bg-zinc-300 p-4 rounded-md text-zinc-800">
+            <div className="border-b border-zinc-300">
                 <div className="flex justify-between items-start">
                     <h3 className="text-lg font-semibold">{data.name}</h3>
-                    <button className="bg-zinc-700 px-2 py-1 rounded text-sm">
-                        Delete
-                    </button>
-                    <span className="bg-zinc-700 px-2 py-1 rounded text-sm">
-                        Popularity: {data.popularity}
-                    </span>
+                    <div className='cursor-pointer text-zinc-100'>
+                        <span className="bg-red-900 px-2 mr-3 py-1 rounded text-sm">
+                            Delete
+                        </span>
+                        <span className="bg-blue-900 px-2 py-1 rounded text-sm">
+                            Edit
+                        </span>
+                    </div>   
                 </div>
             </div>
             <div className="pt-4">
                 <div className="space-y-2">
                     
+                    {data.popularity && (
+                       <p>Popularity: {data.popularity}</p>
+                    )}
                     {data.descriptions && (
                         <p><span className="font-medium">descriptions:</span> {data.descriptions}</p>
                     )}

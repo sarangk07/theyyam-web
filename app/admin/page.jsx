@@ -26,21 +26,21 @@ function AdminHome() {
     };
 
     return (
-        <div className='flex flex-col bg-zinc-100 text-zinc-800 w-full h-screen'>
+        <div className='flex flex-col bg-zinc-400 text-zinc-800 w-full h-screen'>
             <button className='absolute top-1 left-3' onClick={handleLogout}>Logout</button>
             
-            <div className='flex justify-around cursor-pointer mt-5 bg-zinc-100 h-[10%] w-full'>
+            <div className='flex justify-around cursor-pointer mt-5 bg-zinc-400 h-[10%] w-full'>
                 <p onClick={() => setChoice1('default')}>Theyyams</p>
                 <p onClick={() => setChoice1('temples')}>Temples</p>
                 <p onClick={() => setChoice1('add')}>Add Datas</p>
             </div>
-            <div className='h-[90%] bg-zinc-600 w-full'> 
+            <div className='h-[90%] bg-zinc-200 w-full'> 
                 {choice1 === 'add' ? 
                     <>
                         <div>
                             <div className='flex justify-around'>
-                                <p className='mr-4 text-zinc-100 cursor-pointer' onClick={() => setChoice2('add-temples')}>Add Temple</p>
-                                <p className='text-zinc-100 cursor-pointer' onClick={() => setChoice2('add-theyyams')}>Add Theyam</p>
+                                <p className='mr-4 text-zinc-700 cursor-pointer' onClick={() => setChoice2('add-temples')}>Add Temple</p>
+                                <p className='text-zinc-700 cursor-pointer' onClick={() => setChoice2('add-theyyams')}>Add Theyam</p>
                             </div>
                             <div>
                                 {choice2 === 'add-temples' ? 
@@ -58,7 +58,7 @@ function AdminHome() {
                     </>
                     : choice1 === 'temples' ? 
                     <>
-                        <div className='h-full overflow-y-auto'>
+                        <div className='h-full overflow-y-auto '>
                             <TemplesView />
                         </div>
                     </> 

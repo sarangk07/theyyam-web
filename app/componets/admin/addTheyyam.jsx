@@ -99,7 +99,7 @@ function AddTheyyam() {
   return (
     <>
       <div className='flex flex-col items-center w-full'>
-        <h2 className='text-lg text-white'>Add Theyyams</h2>
+        <h2 className='text-lg text-zinc-700'>Add Theyyams</h2>
         {message && <p className="text-white">{message}</p>}
         <form className='flex bg-zinc-800 rounded-md p-4 text-zinc-100 flex-col items-center justify-center w-[80%] md:w-[60%]' onSubmit={handleSubmitTheyyam}>
             <input className='bg-zinc-600 w-full m-1 p-1 rounded-md' type="text" placeholder='Name*' name='name' value={formData.name || ''} onChange={handleChange} required />

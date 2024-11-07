@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react';
-import TDatas from '../api/datas/AllDatas';
+import Calendar from '../componets/Calendar';
 import Theyyams from '../api/datas/TheyyamLists';
 import { useState,useEffect } from 'react';
 
@@ -67,7 +67,7 @@ function MainPage() {
                   <p className='font-bold'>{item.name}</p>
                   <p className='text-xs'>Place: {item.place}</p>
                   {/* <p>Popularity: {item.popularity}</p> */}
-                  <div className='border rounded-sm p-1 bg-zinc-200'>
+                  <div className='border rounded-md p-1 bg-zinc-200'>
                     <h1 className='font-bold'>Festival <span className='text-xs'>[{item.malayala_masam ? item.malayala_masam : ''}]</span></h1>
                     <div className='text-xs flex justify-between lg:flex-col'>
                         <p>Starts: {item.festival_start_time}</p>
@@ -102,7 +102,7 @@ function MainPage() {
         <div>
             {choice == 'cal' ? 
             <>
-                <div>calender</div>
+              <Calendar/>
             </>
             
             :

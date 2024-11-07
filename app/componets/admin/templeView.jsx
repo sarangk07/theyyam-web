@@ -66,24 +66,26 @@ const TemplesView = () => {
     return (
         <div className="p-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {temples.map((temple) => (
-                <div key={temple.id} className="bg-zinc-800 p-4 rounded-md text-zinc-100">
-                    <div className="border-b border-zinc-700">
+                <div key={temple.id} className="bg-zinc-300 p-4 rounded-md text-zinc-800">
+                    <div className="border-b border-zinc-300">
                         <div className="flex justify-between items-start">
                             <h3 className="text-lg font-semibold">{temple.name}</h3>
-                            <span className="bg-zinc-700 px-2 py-1 rounded text-sm">
-                                Popularity: {temple.popularity}
-                            </span>
+                            
                         </div>
                         <div>
                             {/* Correctly pass a function reference to onClick */}
-                            <button onClick={() => handleDelete(temple.id)} className="text-red-500 hover:underline">
+                            <button onClick={() => handleDelete(temple.id)} className="mr-4 border p-1 text-red-800 ">
                                 Delete Temple
+                            </button>
+                            <button className="text-blue-800 border p-1 ">
+                                Edit Temple
                             </button>
                         </div>
                     </div>
                     <div className="pt-4">
                         <div className="space-y-2">
                             <p><span className="font-medium">Place:</span> {temple.place}</p>
+                            <p> Popularity: {temple.popularity}</p>
                             {temple.location && (
                                 <p><span className="font-medium">Location:</span> {temple.location}</p>
                             )}
