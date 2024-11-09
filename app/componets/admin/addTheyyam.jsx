@@ -100,12 +100,23 @@ function AddTheyyam() {
     <>
       <div className='flex flex-col items-center w-full'>
         <h2 className='text-lg text-zinc-700'>Add Theyyams</h2>
-        {message && <p className="text-white">{message}</p>}
+        {message && <p className="text-zinc-700">{message}</p>}
         <form className='flex bg-zinc-800 rounded-md p-4 text-zinc-100 flex-col items-center justify-center w-[80%] md:w-[60%]' onSubmit={handleSubmitTheyyam}>
             <input className='bg-zinc-600 w-full m-1 p-1 rounded-md' type="text" placeholder='Name*' name='name' value={formData.name || ''} onChange={handleChange} required />
-            <input className='bg-zinc-600 w-full m-1 p-1 rounded-md' type="text" placeholder='Descriptions*' name='descriptions' value={formData.descriptions || ''} onChange={handleChange} required />
-            <input className='bg-zinc-600 w-full m-1 p-1 rounded-md' type="file" name='img' onChange={handleChange} />
-            <input className='bg-zinc-600 w-full m-1 p-1 rounded-md' type="file" name='imgs' onChange={handleChange} />
+            <input className='bg-zinc-600 w-full m-1 p-1 rounded-md' type="text" placeholder='Img-Link' name='descriptions' value={formData.descriptions || ''} onChange={handleChange}  />
+           
+            <div className='m-0 p-0 flex text-xs md:flex-row w-full'>
+                    <div className='flex flex-col md:w-full w-[50%]'>
+                        <label htmlFor="img1" className='text-center'>[ Local ] Image</label>
+                        <input className='bg-zinc-600  m-1 p-1 rounded-md' type="file" name='img' onChange={handleChange} /> 
+                    </div>
+                    <div className='flex flex-col md:w-full w-[50%]'>
+                        <label htmlFor="imgs1" className='text-center'>[ Local ] Images</label>
+                        <input className='bg-zinc-600  m-1 p-1 rounded-md' type="file" name='imgs' onChange={handleChange} />
+                    </div>   
+                </div>
+           
+           
             <input className='bg-zinc-600 w-full m-1 p-1 rounded-md' type="text" placeholder='Story' name='story' value={formData.story || ''} onChange={handleChange} />
             
             <div className='m-0 p-0 flex flex-col md:flex-row w-full'>

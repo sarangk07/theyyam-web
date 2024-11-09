@@ -113,12 +113,13 @@ function AddTemple() {
                 <input className='bg-zinc-600 w-full m-1 p-1 rounded-md' type="text" placeholder='Place*' name='Place1' value={templeFormData.Place1 || ''} onChange={handleTempleChange} required />
                 <input className='bg-zinc-600 w-full m-1 p-1 rounded-md' type="text" placeholder='Location' name='Location1' value={templeFormData.Location1 || ''} onChange={handleTempleChange} />
                 <input className='bg-zinc-600 w-full m-1 p-1 rounded-md' type="text" placeholder='Phone' name='Phone1' value={templeFormData.Phone1 || ''} onChange={handleTempleChange} />
-                <input className='bg-zinc-600 w-full m-1 p-1 rounded-md' type="text" placeholder='Address' name='Address1' value={templeFormData.Address1 || ''} onChange={handleTempleChange} />
+                <input className='bg-zinc-600 w-full m-1 p-1 rounded-md' type="text" placeholder='Image[url]' name='Address1' value={templeFormData.Address1 || ''} onChange={handleTempleChange} />
                 
                 <div className='m-0 p-0 flex text-xs md:flex-row w-full'>
                     <div className='flex flex-col md:w-full w-[50%]'>
                         <label htmlFor="img1" className='text-center'>Image</label>
                         <input className='bg-zinc-600 m-1 p-1 rounded-md' type="file" name='img1' onChange={handleTempleChange} />
+                        
                     </div>
                     <div className='flex flex-col md:w-full w-[50%]'>
                         <label htmlFor="imgs1" className='text-center'>Images</label>

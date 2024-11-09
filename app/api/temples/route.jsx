@@ -173,8 +173,7 @@ export async function DELETE(request) {
 
 
 
-
-export async function PUT(request) {
+export async function PATCH(request) {
     const db = await openDB();
     
     try {
@@ -191,76 +190,90 @@ export async function PUT(request) {
             );
         }
 
-        // Extract updated form data
-        const temple = {
-            name: formData.get('name1'),
-            place: formData.get('Place1'),
-            location: formData.get('Location1') || null,
-            phone: formData.get('Phone1') || null,
-            address: formData.get('Address1') || null,
-            popularity: formData.get('popularity1'),
-            festival_duration_days: formData.get('duration1'),
-            malayala_masam: formData.get('malayala_masam1'),
-            festival_start_time: formData.get('start1'),
-            festival_end_time: formData.get('end1')
-        };
-
-        // Handle image files
-        const img1 = formData.get('img1');
-        const imgs1 = formData.get('imgs1');
-
-        let imgPath = null;
-        let imagesArray = [];
-
-        if (img1 instanceof File) {
-            imgPath = img1.name;  // Store the filename
-        }
-
-        if (imgs1 instanceof File) {
-            imagesArray.push(imgs1.name);  // Store the filename
-        }
-
-        // For debugging
-        console.log('Updating temple with data:', {
-            ...temple,
-            imgPath,
-            imagesArray
-        });
-
-        const result = await db.run(`
-            UPDATE temples SET 
-                name = ?, place = ?, location = ?, phone = ?, address = ?,
-                img = ?, images = ?, popularity = ?, 
-                festival_duration_days = ?, malayala_masam = ?,
-                festival_start_time = ?, festival_end_time = ?
-            WHERE id = ?
-        `, [
-            temple.name,
-            temple.place,
-            temple.location,
-            temple.phone,
-            temple.address,
-            imgPath,  
-            JSON.stringify(imagesArray),
-            temple.popularity,
-            temple.festival_duration_days,
-            temple.malayala_masam,
-            temple.festival_start_time,
-            temple.festival_end_time,
-            templeId
-        ]);
-
-        if (result.changes === 0) {
+        // First, check if temple exists
+        const existingTemple = await db.get('SELECT * FROM temples WHERE id = ?', [templeId]);
+        if (!existingTemple) {
             return NextResponse.json(
                 { error: 'Temple not found' },
                 { status: 404 }
             );
         }
 
-        return NextResponse.json(
-            { message: 'Temple updated successfully' },
-            { status: 200 }
-        );
+        // Initialize update object with only provided fields
+        const updateFields = {};
+        const updateValues = [];
+        
+        // Helper function to add field if it exists in formData
+        const addFieldIfExists = (formKey, dbKey = formKey) => {
+            const value = formData.get(formKey);
+            if (value !== null && value !== undefined && value !== '') {
+                updateFields[dbKey] = value;
+                updateValues.push(value);
+            }
+        };
+
+        // Check each field
+        addFieldIfExists('name1', 'name');
+        addFieldIfExists('Place1', 'place');
+        addFieldIfExists('Location1', 'location');
+        addFieldIfExists('Phone1', 'phone');
+        addFieldIfExists('Address1', 'address');
+        addFieldIfExists('popularity1', 'popularity');
+        addFieldIfExists('duration1', 'festival_duration_days');
+        addFieldIfExists('malayala_masam1', 'malayala_masam');
+        addFieldIfExists('start1', 'festival_start_time');
+        addFieldIfExists('end1', 'festival_end_time');
+
+        // Handle image files
+        const img1 = formData.get('img1');
+        const imgs1 = formData.get('imgs1');
+
+        if (img1 instanceof File) {
+            updateFields.img = img1.name;
+            updateValues.push(img1.name);
+        }
+
+        if (imgs1 instanceof File) {
+            updateFields.images = JSON.stringify([imgs1.name]);
+            updateValues.push(JSON.stringify([imgs1.name]));
+        }
+
+        // If no fields to update, return early
+        if (Object.keys(updateFields).length === 0) {
+            return NextResponse.json(
+                { message: 'No fields provided for update' },
+                { status: 400 }
+            );
+        }
+
+        // Construct dynamic UPDATE query
+        const setClause = Object.keys(updateFields)
+            .map(key => `${key} = ?`)
+            .join(', ');
+        
+        // Add temple ID to values array
+        updateValues.push(templeId);
+
+        // For debugging
+        console.log('Updating temple with fields:', updateFields);
+
+        const result = await db.run(`
+            UPDATE temples 
+            SET ${setClause}
+            WHERE id = ?
+        `, updateValues);
+
+        if (result.changes === 0) {
+            return NextResponse.json(
+                { error: 'No changes were made' },
+                { status: 400 }
+            );
+        }
+
+        return NextResponse.json({
+            message: 'Temple updated successfully',
+            updatedFields: Object.keys(updateFields)
+        }, { status: 200 });
 
     } catch (error) {
         console.error('Error updating temple:', error);

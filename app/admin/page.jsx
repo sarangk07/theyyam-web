@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import TemplesView from '../componets/admin/templeView';
 import AddTheyyam from '../componets/admin/addTheyyam';
@@ -33,6 +33,7 @@ function AdminHome() {
                 <p onClick={() => setChoice1('default')}>Theyyams</p>
                 <p onClick={() => setChoice1('temples')}>Temples</p>
                 <p onClick={() => setChoice1('add')}>Add Datas</p>
+                <p onClick={() => setChoice1('graph')}>Graphs</p>            
             </div>
             <div className='h-[90%] bg-zinc-200 w-full'> 
                 {choice1 === 'add' ? 
@@ -58,16 +59,18 @@ function AdminHome() {
                     </>
                     : choice1 === 'temples' ? 
                     <>
-                        <div className='h-full overflow-y-auto '>
-                            <TemplesView />
-                        </div>
+                    <div className='h-full overflow-y-auto '>
+                        <TemplesView />
+                    </div>
                     </> 
-                    : 
+                    :  choice1 === 'default' ? 
                     <>
-                        <div className='h-full overflow-y-auto'>
-                            <TheyyamView/>
-                        </div>
+                    <div className='h-full overflow-y-auto'>
+                        <TheyyamView/>
+                    </div>
                     </>
+                    :
+                    <>GPH</>
                 }
             </div>
         </div>
