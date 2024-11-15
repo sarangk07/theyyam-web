@@ -4,7 +4,8 @@ import React from 'react';
 import Calendar from '../componets/Calendar';
 import { RiseLoader } from 'react-spinners';
 import { useState,useEffect } from 'react';
-
+// "react": "19.0.0-rc-02c0e824-20241028",
+// "react-dom": "19.0.0-rc-02c0e824-20241028",
 function MainPage() {
   const [temples, setTemples] = useState([]);
   const [loading, setLoading] = useState(true);
