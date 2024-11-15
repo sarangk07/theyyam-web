@@ -24,7 +24,7 @@ function MainPage() {
     });
   };
 
-//--------
+//---
 
   const [choice,setChoice] = useState('default')
   const upcomingFestivals = getUpcomingFestivals();
