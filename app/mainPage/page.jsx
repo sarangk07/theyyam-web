@@ -83,23 +83,25 @@ function MainPage() {
   }
 
   return (
-    <div className='bg-amber-400 w-full cursor-default h-[200vh]'>
-      <div className='h-2/5'>
+    <div className='bg-amber-50 w-full cursor-default h-screen'>
+      <div className='h-fit'>
         <div className='h-1/4'>
         {/* <img className='absolute -top-14 w-36 -left-2' src="/imgs/logo-theyyam.png" alt="" /> */}
-        <div className='text-right text-2xl font-extrabold bg-gradient-to-b from-amber-800 to-amber-400 p-4'>
-          𝐓𝐡𝐞𝐲𝐲𝐚𝐦 𝐖𝐞𝐛
+        <div className='text-right text-2xl md:text-3xl font-street font-extrabold bg-gradient-to-b from-amber-800 to-amber-400 p-4'>
+          Theyyam Web
         </div>
+        
+        
         </div>
 
         <div className='h-3/4  bg-gradient-to-t  from-amber-50 to-amber-400 overflow-auto'>
-          <h3 className='font-mono  ml-5 mr-5 border-b-2 border-amber-200 text-emerald-950 text-left'>Theyyam Festival Happening Now [With in 10 Days....]</h3> 
+          <h3 className='font-mono pl-5 pr-5 bg-transparent border-b-2 text-emerald-950 text-left'>Theyyam Festival Happening Now [With in 10 Days....]</h3> 
           
           <div className='flex  justify-between w-fit mt-4'>
             {upcomingFestivals.map((item, index) => (
-              <div key={index} className='text-zinc-800 cursor-default  bg-amber-300 rounded-md border-4 border-amber-200 p-5  flex flex-col items-center justify-center lg:flex-row mr-10 ml-5  w-72  lg:w-96'>
+              <div key={index} className='text-zinc-800 cursor-default my-5 bg-gradient-to-t from-amber-200 to-amber-600 rounded-md border-4 border-amber-200 p-5  flex flex-col items-center justify-center lg:flex-row mr-10 ml-5  w-72  lg:w-96'>
                 <div className='mb-4 lg:mb-2 lg:mr-5'>
-                  <p className='font-bold'>{item.name}</p>
+                  <p className='font-bold text-zinc-50'>{item.name}</p>
                   <p className='text-xs'>Place: {item.place}</p>
                   {/* <p>Popularity: {item.popularity}</p> */}
                   <div className='border rounded-md p-1 bg-amber-200'>
@@ -122,7 +124,7 @@ function MainPage() {
         </div>
       </div>
 
-      <div className='h-3/5 bg-amber-50 text-zinc-800'>
+      <div className='h-fit bg-amber-50 text-zinc-800'>
       <div className='pt-4 pb-3'>
         <div className='flex justify-center items-center flex-col'>
         <input type="search" className='w-56 text-black ' placeholder='Search Temples/Theyyams'/>
@@ -144,7 +146,7 @@ function MainPage() {
             :
 
             <>
-            <div className='flex flex-wrap justify-center'>
+            <div className='flex flex-wrap justify-center pb-10 pt-10'>
             {theyyam.map((data, index) => (
               <div key={index} className='relative rounded-md border bg-zinc-300  m-2 p-4 flex flex-col items-center md:h-48 w-1/3 md:w-1/3 lg:w-1/4 xl:w-1/5'>
                 <img 

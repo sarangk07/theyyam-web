@@ -48,11 +48,10 @@ function AdminHome() {
                                     <>
                                         <AddTemple/>
                                     </>
-                                    : choice2 === 'add-theyyams' ?
+                                    : 
                                     <>
                                         <AddTheyyam/>
                                     </>
-                                    : null
                                 }
                             </div>
                         </div>

@@ -6,6 +6,12 @@
   --background: #ffffff;
   --foreground: #171717;
 }
+@font-face {
+  font-family: 'Street Block';
+  src: url('./fonts/Street_Block_1.0.ttf') format('truetype');
+  font-weight: normal; /* Adjust if you have different weights */
+  font-style: normal; /* Adjust if you have italic styles */
+}
 
 @media (prefers-color-scheme: dark) {
   :root {

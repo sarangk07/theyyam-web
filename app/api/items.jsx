@@ -1,4 +1,4 @@
-// app/api/datas/items.js
+
 import { openDB } from "@/db.mjs";
 
 export default async function handler(req, res) {

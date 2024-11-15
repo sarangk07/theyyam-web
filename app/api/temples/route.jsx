@@ -2,15 +2,15 @@ import { openDB } from '../../../db.mjs';
 import { headers } from 'next/headers';
 import { NextResponse } from 'next/server';
 
-// Helper function to verify token
+//verify token
 async function verifyToken(headersList) {
     const authorization = headersList.get('authorization');
     if (!authorization || !authorization.startsWith('Bearer ')) {
         return false;
     }
     const token = authorization.split(' ')[1];
-    // Add your token verification logic here
-    return true; // Return true if token is valid
+    
+    return true; 
 }
 
 export async function GET() {
@@ -18,7 +18,7 @@ export async function GET() {
         const db = await openDB();
         const temples = await db.all('SELECT * FROM temples');
         
-        // Get theyyams for each temple
+        // Get theyyams
         for (let temple of temples) {
             const theyyams = await db.all(`
                 SELECT t.* FROM theyyams t
@@ -46,7 +46,7 @@ export async function POST(request) {
         const headersList = headers();
         const formData = await request.formData();
         
-        // Extract form data
+        
         const temple = {
             name: formData.get('name1'),
             place: formData.get('Place1'),
@@ -60,23 +60,23 @@ export async function POST(request) {
             festival_end_time: formData.get('end1')
         };
 
-        // Handle image files
+        
         const img1 = formData.get('img1');
         const imgs1 = formData.get('imgs1');
 
-        // Store file names or paths instead of the actual files
+        
         let imgPath = null;
         let imagesArray = [];
 
         if (img1 instanceof File) {
-            imgPath = img1.name;  // For now, just store the filename
+            imgPath = img1.name; 
         }
 
         if (imgs1 instanceof File) {
-            imagesArray.push(imgs1.name);  // For now, just store the filename
+            imagesArray.push(imgs1.name);
         }
 
-        // For debugging
+       
         console.log('Inserting temple with data:', {
             ...temple,
             imgPath,
@@ -95,8 +95,8 @@ export async function POST(request) {
             temple.location,
             temple.phone,
             temple.address,
-            imgPath,  // Store the file path/name instead of the file itself
-            JSON.stringify(imagesArray),  // Store array of file paths/names
+            imgPath, 
+            JSON.stringify(imagesArray),  
             temple.popularity,
             temple.festival_duration_days,
             temple.malayala_masam,
@@ -180,7 +180,7 @@ export async function PATCH(request) {
         const headersList = headers();
         const formData = await request.formData();
         
-        // Extract temple ID from form data
+        
         const templeId = formData.get('id');
         
         if (!templeId) {
@@ -190,7 +190,7 @@ export async function PATCH(request) {
             );
         }
 
-        // First, check if temple exists
+        
         const existingTemple = await db.get('SELECT * FROM temples WHERE id = ?', [templeId]);
         if (!existingTemple) {
             return NextResponse.json(
@@ -199,11 +199,11 @@ export async function PATCH(request) {
             );
         }
 
-        // Initialize update object with only provided fields
+        
         const updateFields = {};
         const updateValues = [];
         
-        // Helper function to add field if it exists in formData
+        
         const addFieldIfExists = (formKey, dbKey = formKey) => {
             const value = formData.get(formKey);
             if (value !== null && value !== undefined && value !== '') {
@@ -212,7 +212,7 @@ export async function PATCH(request) {
             }
         };
 
-        // Check each field
+       
         addFieldIfExists('name1', 'name');
         addFieldIfExists('Place1', 'place');
         addFieldIfExists('Location1', 'location');
@@ -224,7 +224,7 @@ export async function PATCH(request) {
         addFieldIfExists('start1', 'festival_start_time');
         addFieldIfExists('end1', 'festival_end_time');
 
-        // Handle image files
+        
         const img1 = formData.get('img1');
         const imgs1 = formData.get('imgs1');
 
@@ -238,7 +238,7 @@ export async function PATCH(request) {
             updateValues.push(JSON.stringify([imgs1.name]));
         }
 
-        // If no fields to update, return early
+        
         if (Object.keys(updateFields).length === 0) {
             return NextResponse.json(
                 { message: 'No fields provided for update' },
@@ -246,15 +246,15 @@ export async function PATCH(request) {
             );
         }
 
-        // Construct dynamic UPDATE query
+        
         const setClause = Object.keys(updateFields)
             .map(key => `${key} = ?`)
             .join(', ');
         
-        // Add temple ID to values array
+        
         updateValues.push(templeId);
 
-        // For debugging
+        
         console.log('Updating temple with fields:', updateFields);
 
         const result = await db.run(`

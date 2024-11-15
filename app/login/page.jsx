@@ -9,17 +9,17 @@ export default function AdminLogin() {
     const [error, setError] = useState('');
     const router = useRouter();
 
-    // Check for admin token on component mount
+   
     useEffect(() => {
         const altoken = localStorage.getItem('adminToken');
         if (altoken) {
-            router.push('/admin'); // Redirect if already logged in
+            router.push('/admin'); 
         }
     }, [router]);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        setError('');  // Clear any previous errors
+        setError(''); 
 
         try {
             const response = await fetch('/api/auth/login', {
@@ -39,7 +39,7 @@ export default function AdminLogin() {
 
             if (data.token) {
                 localStorage.setItem('adminToken', data.token);
-                router.push('/admin');  // Redirect to admin page
+                router.push('/admin'); 
             }
         } catch (error) {
             setError(error.message || 'Login failed');

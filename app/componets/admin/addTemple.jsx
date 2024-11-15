@@ -12,7 +12,6 @@ function AddTemple() {
         }
     }, [router]);
 
-    // State for Temple form
     const [templeFormData, setTempleFormData] = useState({
         name1: '',
         Place1: '',
@@ -29,7 +28,7 @@ function AddTemple() {
     });
 
 
-    // Handle Temple form input changes
+
     const handleTempleChange = (e) => {
         const { name, value, type, files } = e.target;
         setTempleFormData(prev => ({
@@ -39,7 +38,7 @@ function AddTemple() {
     };
 
 
-    // Handle Temple form submission
+    
     const handleSubmitTemple = async (e) => {
         e.preventDefault();
         setMessage('Submitting...');
@@ -48,11 +47,11 @@ function AddTemple() {
         try {
             const formData = new FormData();
             
-            // Append all form fields
+            
             Object.keys(templeFormData).forEach(key => {
-                // Don't append null or undefined values
+                
                 if (templeFormData[key] != null) {
-                    // Handle file inputs specially
+                    
                     if (key === 'img1' || key === 'imgs1') {
                         if (templeFormData[key] instanceof File) {
                             formData.append(key, templeFormData[key]);
@@ -75,7 +74,7 @@ function AddTemple() {
 
             if (response.ok) {
                 setMessage('Temple added successfully!');
-                // Reset form
+                
                 setTempleFormData({
                     name1: '',
                     Place1: '',

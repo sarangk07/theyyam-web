@@ -6,7 +6,7 @@ function AddTheyyam() {
     const [message, setMessage] = useState('');
     const router = useRouter();
 
-     // State for Theyyam form
+    
      const [formData, setFormData] = useState({
         name: '',
         descriptions: '',
@@ -25,7 +25,7 @@ function AddTheyyam() {
         }
     }, [router]);
 
-    // Handle Theyyam form input changes
+    
     const handleChange = (e) => {
         const { name, value, type, files } = e.target;
         setFormData(prev => ({
@@ -34,7 +34,7 @@ function AddTheyyam() {
         }));
     };
 
-     /// Handle Theyyam form submission
+     
      const handleSubmitTheyyam = async (e) => {
         e.preventDefault();
         const token = localStorage.getItem('adminToken');
@@ -42,30 +42,30 @@ function AddTheyyam() {
         try {
             const formDataToSend = new FormData();
             for (const key in formData) {
-                // Append each field to FormData
+                
                 formDataToSend.append(key, formData[key]);
             }
 
-            // Append file inputs separately
+            
             const imgInput = document.querySelector('input[name="img"]');
             const imgsInput = document.querySelector('input[name="imgs"]');
 
             if (imgInput.files.length > 0) {
-                formDataToSend.append('img', imgInput.files[0]); // Append single file
+                formDataToSend.append('img', imgInput.files[0]); 
             }
 
             if (imgsInput.files.length > 0) {
                 for (let i = 0; i < imgsInput.files.length; i++) {
-                    formDataToSend.append('imgs', imgsInput.files[i]); // Append multiple files
+                    formDataToSend.append('imgs', imgsInput.files[i]); 
                 }
             }
 
-            // Append the token to the headers
+            
             const theyyamResponse = await fetch('/api/theyyams', {
                 method: 'POST',
                 headers: {
                     'Authorization': `Bearer ${token}`,
-                    // Do NOT set 'Content-Type' here; let the browser handle it
+                    
                 },
                 body: formDataToSend
             });
@@ -74,7 +74,7 @@ function AddTheyyam() {
             
             if (contentType && contentType.includes('application/json')) {
                 const result = await theyyamResponse.json();
-                // Handle success case
+                
                 console.log('Theyam added successfully:', result);
                 setFormData({
                     name: '',
@@ -88,7 +88,7 @@ function AddTheyyam() {
                 });
                 setMessage('Theyyam added successfully!');
             } else {
-                const text = await theyyamResponse.text(); // Get raw response text for debugging
+                const text = await theyyamResponse.text(); 
                 console.error('Unexpected response:', text);
             }
         } catch (e) {

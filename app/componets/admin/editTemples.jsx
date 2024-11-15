@@ -16,7 +16,7 @@ export default function UpdateTempleForm({ templeId, initialData, onUpdateSucces
             const formData = new FormData(e.target);
             formData.append('id', templeId);
 
-            // Filter out empty fields
+            
             const cleanFormData = new FormData();
             for (const [key, value] of formData.entries()) {
                 if (value instanceof File) {
@@ -93,7 +93,7 @@ export default function UpdateTempleForm({ templeId, initialData, onUpdateSucces
 
                 <div>
                     <label className="block text-sm font-medium text-gray-700">Image[url]</label>
-                    <textarea
+                    <input
                         name="Address1"
                         defaultValue={initialData?.address}
                         className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
