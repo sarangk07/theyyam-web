@@ -1,11 +1,11 @@
 'use client'
 
-import React from 'react';
+import React, { useRef,useState,useEffect} from 'react';
 import Calendar from '../componets/Calendar';
 import { RiseLoader } from 'react-spinners';
-import { useState,useEffect } from 'react';
 import { LocalTempleData } from '../api/localData/Ltemples';
 import { LocalTheyyamData } from '../api/localData/Ltheyyams';
+import gsap from 'gsap';
 
 // "react": "19.0.0-rc-02c0e824-20241028",
 // "react-dom": "19.0.0-rc-02c0e824-20241028",
@@ -16,6 +16,42 @@ function MainPage() {
 
   const [today, setToday] = useState(null);
   const [tenDaysFromNow, setTenDaysFromNow] = useState(null);
+
+
+
+
+//gsap 
+const [titleRef, setTitleRef] = useState(null);
+// const [theyyamBox, setTheyyamBox] = useState(null);
+const [titleRef1, setTitleRef1] = useState(null);
+const [titleRef2, setTitleRef2] = useState(null);
+
+
+  useEffect(() => {
+    
+    if (typeof window !== 'undefined' && titleRef) {
+      gsap.to(titleRef, {
+        color: 'black', 
+        duration: 4, 
+        repeat: -1, 
+        yoyo: true, 
+        ease: "power1.inOut"
+      });
+
+
+      gsap.to(titleRef2,{
+        x:-170,
+        duration:4,
+        yoyo:true,
+        repeat:-1,
+        ease: "power1.inOut"
+      })
+    }
+  }, [titleRef]);
+
+
+
+
 
   useEffect(() => {
     const currentDate = new Date();
@@ -135,20 +171,24 @@ function MainPage() {
   }
 
   return (
-    <div className='bg-amber-50 w-full cursor-default h-screen'>
+    <div className='bg-amber-50 w-full cursor-default overflow-x-hidden h-screen'>
       <div className='h-fit'>
         <div className='h-1/4'>
         {/* <img className='absolute -top-14 w-36 -left-2' src="/imgs/logo-theyyam.png" alt="" /> */}
-        <div className='text-right text-2xl md:text-3xl font-street font-extrabold bg-gradient-to-b from-amber-800 to-amber-400 p-4'>
-          Theyyam Web
+        <div ref={(el) => setTitleRef(el)} className='text-right text-2xl md:text-3xl font-street relative font-extrabold bg-gradient-to-b from-amber-800 to-amber-400 p-4'>
+          <span ref={(el) => setTitleRef1(el)} className='absolute right-24'>Theyyam </span> <span ref={(el) => setTitleRef2(el)} className='absolute right-8'>Web</span>
         </div>
         
         
         </div>
 
         <div className='h-3/4  bg-gradient-to-t  from-amber-50 to-amber-400 overflow-auto'>
-          <h3 className='font-mono pl-5 pr-5 bg-transparent border-b-2 text-emerald-950 text-left'>Theyyam Festival Happening Now [With in 10 Days....]</h3> 
-          
+        
+        <h3 
+          className='font-mono pl-5 pr-5 mt-5 bg-transparent border-b-2 text-emerald-950 text-left'
+        >
+        Theyyam Festival Happening Now [With in 10 Days....]
+      </h3>         
           <div className='flex  justify-between w-fit mt-4'>
             {upcomingFestivals.map((item, index) => (
               <div key={index} className='text-zinc-800 cursor-default my-5 bg-gradient-to-t from-amber-200 to-amber-600 rounded-md border-4 border-amber-200 p-5  flex flex-col items-center justify-center lg:flex-row mr-10 ml-5  w-72  lg:w-96'>
@@ -198,15 +238,16 @@ function MainPage() {
             :
 
             <>
-            <div className='flex flex-wrap justify-center pb-10 pt-10'>
+            <div className='flex flex-wrap justify-center pb-10 pt-10 ' >
             {theyyam.map((data, index) => (
-              <div key={index} className='relative rounded-md border bg-zinc-300  m-2 p-4 flex flex-col items-center md:h-48 w-1/3 md:w-1/3 lg:w-1/4 xl:w-1/5'>
+              <div key={index} className='relative rounded-md border bg-zinc-300  m-2 p-4 flex flex-col items-center md:h-48 w-1/3 md:w-1/3 lg:w-1/4 xl:w-1/5' style={{filter: 'drop-shadow(8px 8px 3px rgb(251 191 36))'}}>
                 <img 
+                  
                   alt="" 
                   className='absolute rounded-md inset-0 object-cover bg-zinc-300 w-full h-full z-0' 
                   src={(data.img ?? data.descriptions) || "./imgs/temple.png"} 
                 />
-                <p className='font-bold  justify-end relative bottom-2  p-2 z-10 bg-transparent backdrop-blur-lg rounded-md text-white text-lg'>{data.name || 'Not Found'}</p>
+                <p className='font-bold justify-end relative bottom-2 p-2 z-10 bg-transparent backdrop-blur-sm rounded-md text-white text-xs md:text-lg'>{data.name || 'Not Found'}</p>
               </div>
             ))}
             </div>
