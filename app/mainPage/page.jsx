@@ -6,6 +6,7 @@ import { RiseLoader } from 'react-spinners';
 import { LocalTempleData } from '../api/localData/Ltemples';
 import { LocalTheyyamData } from '../api/localData/Ltheyyams';
 import gsap from 'gsap';
+import Swastika from '../componets/customLoader';
 
 // "react": "19.0.0-rc-02c0e824-20241028",
 // "react-dom": "19.0.0-rc-02c0e824-20241028",
@@ -31,8 +32,8 @@ const [titleRef2, setTitleRef2] = useState(null);
     
     if (typeof window !== 'undefined' && titleRef) {
       gsap.to(titleRef, {
-        color: 'black', 
-        duration: 4, 
+        color: 'white', 
+        duration: 6, 
         repeat: -1, 
         yoyo: true, 
         ease: "power1.inOut"
@@ -40,8 +41,8 @@ const [titleRef2, setTitleRef2] = useState(null);
 
 
       gsap.to(titleRef2,{
-        x:-170,
-        duration:4,
+        x:'150px',
+        duration:6,
         yoyo:true,
         repeat:-1,
         ease: "power1.inOut"
@@ -174,9 +175,13 @@ const [titleRef2, setTitleRef2] = useState(null);
     <div className='bg-amber-50 w-full cursor-default overflow-x-hidden h-screen'>
       <div className='h-fit'>
         <div className='h-1/4'>
+        
         {/* <img className='absolute -top-14 w-36 -left-2' src="/imgs/logo-theyyam.png" alt="" /> */}
-        <div ref={(el) => setTitleRef(el)} className='text-right text-2xl md:text-3xl font-street relative font-extrabold bg-gradient-to-b from-amber-800 to-amber-400 p-4'>
-          <span ref={(el) => setTitleRef1(el)} className='absolute right-24'>Theyyam </span> <span ref={(el) => setTitleRef2(el)} className='absolute right-8'>Web</span>
+        <div ref={(el) => setTitleRef(el)} className='text-right text-black text-2xl md:text-3xl font-street relative font-extrabold bg-gradient-to-b from-amber-800 to-amber-400 p-4 pb-10'>
+      <div className='absolute'>
+        <Swastika/>   
+      </div>    
+      <span ref={(el) => setTitleRef1(el)} className='absolute  right-[90px] md:right-[80px]'>Theyyam </span> <span ref={(el) => setTitleRef2(el)} className='absolute right-[45px] md:right-[28px]'>Web</span>
         </div>
         
         
@@ -188,7 +193,7 @@ const [titleRef2, setTitleRef2] = useState(null);
           className='font-mono pl-5 pr-5 mt-5 bg-transparent border-b-2 text-emerald-950 text-left'
         >
         Theyyam Festival Happening Now [With in 10 Days....]
-      </h3>         
+      </h3>  
           <div className='flex  justify-between w-fit mt-4'>
             {upcomingFestivals.map((item, index) => (
               <div key={index} className='text-zinc-800 cursor-default my-5 bg-gradient-to-t from-amber-200 to-amber-600 rounded-md border-4 border-amber-200 p-5  flex flex-col items-center justify-center lg:flex-row mr-10 ml-5  w-72  lg:w-96'>
@@ -231,9 +236,9 @@ const [titleRef2, setTitleRef2] = useState(null);
 
         <div>
             {choice == 'cal' ? 
-            <>
+            <div className='flex justify-center items-center'>
               <Calendar/>
-            </>
+            </div>
             
             :
 
