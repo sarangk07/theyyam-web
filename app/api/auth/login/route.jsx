@@ -1,4 +1,4 @@
-// app/api/auth/login/route.js
+
 import { openDB } from '@/db.mjs';  // Adjust the import path according to your project structure
 import { sign } from 'jsonwebtoken';
 import bcrypt from 'bcryptjs';

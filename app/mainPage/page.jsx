@@ -4,6 +4,9 @@ import React from 'react';
 import Calendar from '../componets/Calendar';
 import { RiseLoader } from 'react-spinners';
 import { useState,useEffect } from 'react';
+import { LocalTempleData } from '../api/localData/Ltemples';
+import { LocalTheyyamData } from '../api/localData/Ltheyyams';
+
 // "react": "19.0.0-rc-02c0e824-20241028",
 // "react-dom": "19.0.0-rc-02c0e824-20241028",
 function MainPage() {
@@ -11,19 +14,39 @@ function MainPage() {
   const [loading, setLoading] = useState(true);
   const [theyyam,setTheyyams] = useState([])
 
+  const [today, setToday] = useState(null);
+  const [tenDaysFromNow, setTenDaysFromNow] = useState(null);
+
+  useEffect(() => {
+    const currentDate = new Date();
+    const tenDaysLater = new Date();
+    tenDaysLater.setDate(currentDate.getDate() + 10);
+    setToday(currentDate);
+    setTenDaysFromNow(tenDaysLater);
+  }, []);
 
   const getUpcomingFestivals = () => {
-    const today = new Date();
-    const tenDaysFromNow = new Date();
-    tenDaysFromNow.setDate(today.getDate() + 10);
-    
-
+    if (!today || !tenDaysFromNow) return [];
     return temples.filter(item => {
       const startDate = new Date(`${today.getFullYear()}-${item.festival_start_time}`);
       const endDate = new Date(`${today.getFullYear()}-${item.festival_end_time}`);
-      return (startDate <= tenDaysFromNow && endDate >= today);
+      return startDate <= tenDaysFromNow && endDate >= today;
     });
   };
+  
+
+  // const getUpcomingFestivals = () => {
+  //   const today = new Date();
+  //   const tenDaysFromNow = new Date();
+  //   tenDaysFromNow.setDate(today.getDate() + 10);
+    
+
+  //   return temples.filter(item => {
+  //     const startDate = new Date(`${today.getFullYear()}-${item.festival_start_time}`);
+  //     const endDate = new Date(`${today.getFullYear()}-${item.festival_end_time}`);
+  //     return (startDate <= tenDaysFromNow && endDate >= today);
+  //   });
+  // };
 
 //---
 
@@ -36,21 +59,35 @@ function MainPage() {
       fetchTemples();
   }, []);
 
-  const fetchTemples = async () => {
-      try {
-          const response = await fetch('/api/temples');
-          if (!response.ok) {
-              throw new Error('Failed to fetch temples');
-          }
-          const data = await response.json();
-          setTemples(data);
-      } catch (err) {
-          setError(err.message);
-      } finally {
-          setLoading(false);
-      }
-  };
+  // const fetchTemples = async () => {
+  //     try {
+  //         const response = await fetch('/api/temples');
+  //         if (!response.ok) {
+  //             throw new Error('Failed to fetch temples');
+  //         }
+  //         const data = await response.json();
+  //         console.log(data,'templeeeeeeeeeeeeeeeeeeeeeeeeeeee');
+          
+  //         setTemples(data);
+  //     } catch (err) {
+  //         setError(err.message);
+  //     } finally {
+  //         setLoading(false);
+  //     }
+  // };
 
+  const fetchTemples = ()=> {
+    try{
+      if (!LocalTempleData) {
+        throw new Error('Failed to fetch temples');
+      }
+      setTemples(LocalTempleData);
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  }
 
 
 
@@ -58,24 +95,38 @@ function MainPage() {
       fetchTheyyams();
   }, []);
 
-  const fetchTheyyams = async ()=>{
-      try{
-          const response = await fetch('/api/theyyams')
-          if (!response.ok) {
-              throw new Error('Failed to fetch theyyam');
-          }
-          const datas = await response.json()
-          console.log(datas,'==================');
+  // const fetchTheyyams = async ()=>{
+  //     try{
+  //         const response = await fetch('/api/theyyams')
+  //         if (!response.ok) {
+  //             throw new Error('Failed to fetch theyyam');
+  //         }
+  //         const datas = await response.json()
+  //         console.log(datas,'==================');
           
-          setTheyyams(datas)
-      }catch(e){
-          console.log(e);
+  //         setTheyyams(datas)
+  //     }catch(e){
+  //         console.log(e);
           
-      }finally{
-          setLoading(false)
-      }
-  }
+  //     }finally{
+  //         setLoading(false)
+  //     }
+  // }
 
+  const fetchTheyyams = ()=> {
+    try{
+      if (!LocalTheyyamData) {
+        throw new Error('Failed to fetch theyyams');
+      }
+      setTheyyams(LocalTheyyamData);
+      console.log(LocalTheyyamData);
+      
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  }
 
 
 
