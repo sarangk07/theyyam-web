@@ -24,8 +24,7 @@ function MainPage() {
 //gsap 
 const [titleRef, setTitleRef] = useState(null);
 // const [theyyamBox, setTheyyamBox] = useState(null);
-const [titleRef1, setTitleRef1] = useState(null);
-const [titleRef2, setTitleRef2] = useState(null);
+
 
 
   useEffect(() => {
@@ -33,20 +32,11 @@ const [titleRef2, setTitleRef2] = useState(null);
     if (typeof window !== 'undefined' && titleRef) {
       gsap.to(titleRef, {
         color: 'white', 
-        duration: 6, 
+        duration: 9, 
         repeat: -1, 
         yoyo: true, 
         ease: "power1.inOut"
       });
-
-
-      gsap.to(titleRef2,{
-        x:'150px',
-        duration:6,
-        yoyo:true,
-        repeat:-1,
-        ease: "power1.inOut"
-      })
     }
   }, [titleRef]);
 
@@ -90,12 +80,15 @@ const [titleRef2, setTitleRef2] = useState(null);
   const [choice,setChoice] = useState('default')
   const upcomingFestivals = getUpcomingFestivals();
 
+console.log('ttt',upcomingFestivals);
 
 
   useEffect(() => {
       fetchTemples();
   }, []);
 
+
+//api-----------------
   // const fetchTemples = async () => {
   //     try {
   //         const response = await fetch('/api/temples');
@@ -113,6 +106,8 @@ const [titleRef2, setTitleRef2] = useState(null);
   //     }
   // };
 
+
+//local-datas--------------
   const fetchTemples = ()=> {
     try{
       if (!LocalTempleData) {
@@ -132,6 +127,8 @@ const [titleRef2, setTitleRef2] = useState(null);
       fetchTheyyams();
   }, []);
 
+
+//api-----------------
   // const fetchTheyyams = async ()=>{
   //     try{
   //         const response = await fetch('/api/theyyams')
@@ -150,6 +147,8 @@ const [titleRef2, setTitleRef2] = useState(null);
   //     }
   // }
 
+
+//local-datas--------------
   const fetchTheyyams = ()=> {
     try{
       if (!LocalTheyyamData) {
@@ -178,10 +177,10 @@ const [titleRef2, setTitleRef2] = useState(null);
         
         {/* <img className='absolute -top-14 w-36 -left-2' src="/imgs/logo-theyyam.png" alt="" /> */}
         <div ref={(el) => setTitleRef(el)} className='text-right text-black text-2xl md:text-3xl font-street relative font-extrabold bg-gradient-to-b from-amber-800 to-amber-400 p-4 pb-10'>
-      <div className='absolute'>
-        <Swastika/>   
-      </div>    
-      <span ref={(el) => setTitleRef1(el)} className='absolute  right-[90px] md:right-[80px]'>Theyyam </span> <span ref={(el) => setTitleRef2(el)} className='absolute right-[45px] md:right-[28px]'>Web</span>
+        <div className='absolute'>
+          <Swastika/>   
+        </div>    
+          <p>Theyyam Web</p>
         </div>
         
         
@@ -209,8 +208,21 @@ const [titleRef2, setTitleRef2] = useState(null);
                     </div>
                     
                   </div>
-                  
-                  <p className='cursor-pointer'>more...</p>
+                   
+                  <p>Theyyams:</p>
+                  {item.theyyams && item.theyyams.length > 0 ? (
+                    <div className='flex flex-wrap'>
+                      {item.theyyams.map((theyyam, index) => (
+                        <p key={index} className="cursor-pointer text-xs pr-3 ">
+                          {theyyam},
+                        </p>
+                      ))}
+                    </div>
+                  ) : (
+                    <>No Datas</>
+                  )}
+
+                    
                 </div>
                 <div>
                   <img className='max:w-40 min-w-36 md:min-w-40 rounded-sm' src={(item.img ?? item.address) || "./imgs/temple.png"} alt={item.name} width={100} height={100} />
@@ -245,14 +257,13 @@ const [titleRef2, setTitleRef2] = useState(null);
             <>
             <div className='flex flex-wrap justify-center pb-10 pt-10 ' >
             {theyyam.map((data, index) => (
-              <div key={index} className='relative rounded-md border bg-zinc-300  m-2 p-4 flex flex-col items-center md:h-48 w-1/3 md:w-1/3 lg:w-1/4 xl:w-1/5' style={{filter: 'drop-shadow(8px 8px 3px rgb(251 191 36))'}}>
+              <div key={index} className='relative rounded-md border bg-zinc-300  m-2 p-4 flex flex-col items-center h-28 md:h-48 w-1/3 md:w-1/3 lg:w-1/4 xl:w-1/5' style={{filter: 'drop-shadow(8px 8px 3px rgb(251 191 36))'}}>
                 <img 
-                  
                   alt="" 
                   className='absolute rounded-md inset-0 object-cover bg-zinc-300 w-full h-full z-0' 
                   src={(data.img ?? data.descriptions) || "./imgs/temple.png"} 
                 />
-                <p className='font-bold justify-end relative bottom-2 p-2 z-10 bg-transparent backdrop-blur-sm rounded-md text-white text-xs md:text-lg'>{data.name || 'Not Found'}</p>
+                <p className='font-bold justify-end absolute bottom-1 p-2 z-10 bg-transparent backdrop-blur-sm rounded-md text-white text-xs md:text-lg'>{data.name || 'Not Found'}</p>
               </div>
             ))}
             </div>

@@ -5,13 +5,11 @@ import gsap from 'gsap'
 
 function Swastika() {
     const mainRef = useRef(null)
-
     const subRefs = useRef([])
-    useEffect(()=>{
-        
-        
-        const tl = gsap.timeline({ repeat: -1, yoyo: true });
 
+    
+    useEffect(()=>{
+        const tl = gsap.timeline({ repeat: -1, yoyo: true });
         tl.to(subRefs.current, {
             backgroundColor:'yellow',
             duration: 1,
@@ -25,7 +23,6 @@ function Swastika() {
             ease: "power1.inOut"
         })
 
-        // // Reset to original state
         tl.to(subRefs.current, {
             backgroundColor:'#f97316',
             duration: 1,

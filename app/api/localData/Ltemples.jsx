@@ -84,23 +84,6 @@ export const LocalTempleData = [
     	"popularity" :4, 
     	"theyyams":[]
     },
-    {
-    	"address":"", 
-    	"created_at":"2024-11-06 05:41:27", 
-    	"festival_duration_days" :9, 
-    	"festival_end_time":"November 15", 
-    	"festival_start_time":"November 7", 
-    	"id" :7, 
-    	"images":[] , 
-    	"img" :null, 
-    	"location" :null, 
-    	"malayala_masam":"Thulam",  
-    	"name":"Erikkulam Sree Vettakkorumakan Temple",  
-    	"phone" :null,  
-    	"place":"Madikkai",  
-    	"popularity ":5,  
-    	"theyyams":[]
-    },
 
     {
     	"address":"", 
@@ -152,7 +135,7 @@ export const LocalTempleData = [
     	"phone" :null,  
     	"place":"Madikkai",  
     	"popularity ":2,  
-    	"theyyams":[]
+    	"theyyams":['Vettakkorumakan','Muchilottu Bhagavathy']
     },
 
     {
