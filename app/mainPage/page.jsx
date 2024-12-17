@@ -249,7 +249,7 @@ console.log('ttt',upcomingFestivals);
         <div>
             {choice == 'cal' ? 
             <div className='flex justify-center items-center'>
-              <Calendar/>
+              <Calendar templesData={temples} TodayDate={today}/>
             </div>
             
             :
