@@ -135,7 +135,7 @@ export const LocalTempleData = [
     	"phone" :null,  
     	"place":"Madikkai",  
     	"popularity ":2,  
-    	"theyyams":['Vettakkorumakan','Muchilottu Bhagavathy']
+    	"theyyams":['Vettakkorumakan']
     },
 
     {
@@ -154,5 +154,115 @@ export const LocalTempleData = [
     	"place":"Kasargod, Cheruvathur, Palathera, Thimiri",  
     	"popularity ":4,  
     	"theyyams":[]
+    },
+
+
+
+
+
+
+	{
+    	"address":"", 
+    	"created_at":"2024-12-06 05:41:27", 
+    	"festival_duration_days" :7, 
+    	"festival_end_time":"December  18", 
+    	"festival_start_time":"December 11", 
+    	"id" :12, 
+    	"images":[] , 
+    	"img" :null, 
+    	"location" :null, 
+    	"malayala_masam":"Vrichikam 25 - Dhanu 2",  
+    	"name":"Iduvangal Sree Vishnumoorthi Temple",  
+    	"phone" :null,  
+    	"place":"Irikkur",  
+    	"popularity ":3,  
+    	"theyyams":['Gulikan','Vishnumoorthy ','Raktheswari']
+    },
+
+	{
+    	"address":"", 
+    	"created_at":"2024-12-06 05:41:27", 
+    	"festival_duration_days" :4, 
+    	"festival_end_time":"December  14", 
+    	"festival_start_time":"December 11", 
+    	"id" :13, 
+    	"images":[] , 
+    	"img" :null, 
+    	"location" :null, 
+    	"malayala_masam":"Vrichikam 25-28",  
+    	"name":"Kokkad Sree Muchilott Bhagavathi Kshethram",  
+    	"phone" :null,  
+    	"place":"Cheruthazham",  
+    	"popularity ":4,  
+    	"theyyams":['Muchilot Bhagavathi','Vishnumoorthy ','Kundor Chamundi','Puliyoor Kannan','Kannagattu Bhagavathi','Narambil Bhagavathi']
+    },
+
+	{
+    	"address":"", 
+    	"created_at":"2024-12-06 05:41:27", 
+    	"festival_duration_days" :3, 
+    	"festival_end_time":"December  21", 
+    	"festival_start_time":"December 19", 
+    	"id" :14, 
+    	"images":[] , 
+    	"img" :null, 
+    	"location" :null, 
+    	"malayala_masam":"Dhanu 4,5,6",  
+    	"name":"Karippal Nagam Aayillyam Ulsavam",  
+    	"phone" :null,  
+    	"place":"Eramam",  
+    	"popularity ":3,  
+    	"theyyams":['Nagakanyaka','Naagarajan']
+    },
+	{
+    	"address":"", 
+    	"created_at":"2024-12-06 05:41:27", 
+    	"festival_duration_days" :3, 
+    	"festival_end_time":"December  22", 
+    	"festival_start_time":"December 20", 
+    	"id" :15, 
+    	"images":[] , 
+    	"img" :null, 
+    	"location" :null, 
+    	"malayala_masam":"Dhanu 5,6,7",  
+    	"name":"Pandyancheri Sri.Bhagavathi Kshethram",  
+    	"phone" :null,  
+    	"place":"Thalassery",  
+    	"popularity ":3,  
+    	"theyyams":['Gulikan','Karanavar ','Pothi','Nagabhagavathy','Bhairavan','kuttichathan','bhagavathi','Vishnumoorthy']
+    },
+	{
+    	"address":"", 
+    	"created_at":"2024-12-06 05:41:27", 
+    	"festival_duration_days" :2, 
+    	"festival_end_time":"December  22", 
+    	"festival_start_time":"December 21", 
+    	"id" :16, 
+    	"images":[] , 
+    	"img" :null, 
+    	"location" :null, 
+    	"malayala_masam":"Dhanu 6,7",  
+    	"name":"Sree Pottan Dhaivasthanam Pallikunnumpuram",  
+    	"phone" :null,  
+    	"place":"Azhikode",  
+    	"popularity ":4,  
+    	"theyyams":['Pottan Theyyam','Gulikan','Kurathiyamma']
+    },
+	{
+    	"address":"", 
+    	"created_at":"2024-12-06 05:41:27", 
+    	"festival_duration_days" :3, 
+    	"festival_end_time":"December  24", 
+    	"festival_start_time":"December 22", 
+    	"id" :17, 
+    	"images":[] , 
+    	"img" :null, 
+    	"location" :null, 
+    	"malayala_masam":"Dhanu 7,8,9",  
+    	"name":"Sree Vettakkorumakan Kshethram,Kannom",  
+    	"phone" :null,  
+    	"place":"Ezhom",  
+    	"popularity ":3,  
+    	"theyyams":['Vettakkorumakan','Oorpazhassi Daivathaar']
     },
 ]

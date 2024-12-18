@@ -50,7 +50,7 @@ function Calendar({ templesData, TodayDate }) {
           <div className='flex flex-wrap'>
             {filteredTemples.length > 0 ? (
               filteredTemples.map((item, index) => (
-                <div key={index} className='text-zinc-800 cursor-default my-5 bg-gradient-to-t from-amber-200 to-amber-600 rounded-md border-4 border-amber-200 p-5 flex flex-wrap items-center justify-center lg:flex-row mr-10 ml-5 w-72 lg:w-96'>
+                <div key={index} className='text-zinc-800 cursor-default my-5 bg-gradient-to-t from-yellow-200 to-yellow-600 rounded-md border-4 border-amber-200 p-5 flex flex-wrap items-center justify-center lg:flex-row mr-10 ml-5 w-56 md:w-96'>
                   <div className='mb-4 lg:mb-2 lg:mr-5'>
                     <p className='font-bold text-zinc-50'>{item.name}</p>
                     <p className='text-xs'>Place: {item.place}</p>
@@ -88,7 +88,7 @@ function Calendar({ templesData, TodayDate }) {
               ))
             ) : (
               <div className='w-full text-center p-4 text-zinc-600'>
-                No temples found for {selectedMonth}
+                No Festival found in {selectedMonth}
               </div>
             )}
           </div>
