@@ -212,7 +212,7 @@ console.log('ttt',upcomingFestivals);
           <img 
             src="https://i.pinimg.com/1200x/dc/fd/da/dcfddabd6f5b2533fe615aeb49a295b0.jpg" 
             alt="theyyamLPaG2"
-            className="absolute w-full h-full object-cover object-center md:object-right-top"
+            className="absolute w-full h-screen object-cover object-center md:object-right-top"
           />
           
           <div className="absolute inset-0 bg-black/20" />
@@ -227,7 +227,7 @@ console.log('ttt',upcomingFestivals);
           <img 
             src="https://i.pinimg.com/1200x/b8/c1/19/b8c119223267d926a457a0049a4aaa77.jpg" 
             alt="theyyamLPaG1"
-            className="absolute w-full h-full object-cover object-center md:object-left-top"
+            className="absolute w-full h-screen object-cover object-center md:object-left-top"
           />
           
           <div className="absolute inset-0 bg-black/20" />
@@ -251,7 +251,7 @@ console.log('ttt',upcomingFestivals);
         <div className='h-1/4'>
         
         
-        <div ref={(el) => setTitleRef(el)} className='text-right text-black text-2xl md:text-3xl font-street relative font-extrabold bg-gradient-to-b from-amber-800 to-amber-400 p-4 pb-10'>
+        <div ref={(el) => setTitleRef(el)} className='text-right text-black text-2xl md:text-3xl font-street relative font-extrabold bg-gradient-to-b from-red-800 to-orange-400 p-4 pb-10'>
         <div className='absolute'>
           <Swastika/>   
         </div>    
@@ -265,17 +265,17 @@ console.log('ttt',upcomingFestivals);
         >
         Theyyam Festival Happening Now [With in 10 Days....]
       </h3> 
-        <div className='h-3/4 md:pt-3 font-serif pt-10 bg-gradient-to-t  from-amber-50 to-amber-400 overflow-auto'>
+        <div className='h-3/4 md:pt-3 font-serif pt-10 bg-gradient-to-t  from-amber-50 to-orange-400 overflow-auto'>
         
          
           <div className='flex  justify-between w-fit mt-4'>
             {upcomingFestivals.map((item, index) => (
-              <div key={index} className='text-zinc-800 flex-wrap cursor-default my-5 bg-gradient-to-t from-amber-200 to-amber-600 rounded-md border-4 border-amber-200 p-5  flex flex-col items-center justify-center lg:flex-row mr-10 ml-5  w-80  lg:w-96'>
+              <div key={index} className='text-zinc-800 flex-wrap cursor-default my-5 bg-gradient-to-t from-orange-200 to-orange-600 rounded-md border-4 border-orange-200 p-5  flex flex-col items-center justify-center lg:flex-row mr-10 ml-5  w-80  lg:w-96'>
                 <div className='mb-4 lg:mb-2 lg:mr-5'>
                   <p className='font-bold text-zinc-50'>{item.name}</p>
                   <p className='text-xs'>Place: {item.place}</p>
                   {/* <p>Popularity: {item.popularity}</p> */}
-                  <div className='border rounded-md p-1 bg-amber-200'>
+                  <div className='border rounded-md p-1 bg-orange-200'>
                     <h1 className='font-bold'>Festival <span className='text-xs'>[{item.malayala_masam ? item.malayala_masam : ''}]</span></h1>
                     <div className='text-xs flex justify-between lg:flex-col'>
                         <p>Starts: {item.festival_start_time}</p>
@@ -308,7 +308,7 @@ console.log('ttt',upcomingFestivals);
         </div>
       </div>
 
-      <div className='h-fit bg-amber-50 text-zinc-800'>
+      <div className='h-fit bg-orange-50 text-zinc-800'>
       {/* <div className='pt-4 pb-3'>
         <div className='flex justify-center items-center flex-col'>
         <input type="search" className='w-56 text-black ' placeholder='Search Temples/Theyyams'/>
@@ -332,11 +332,11 @@ console.log('ttt',upcomingFestivals);
             <>
             <div className='flex flex-wrap justify-center pb-10 pt-10 ' >
             {theyyam.map((data, index) => (
-              <div key={index} className='relative rounded-md border bg-zinc-300  m-2 p-4 flex flex-col items-center h-28 md:h-48 w-1/3 md:w-1/3 lg:w-1/4 xl:w-1/5' style={{filter: 'drop-shadow(8px 8px 3px rgb(251 191 36))'}}>
+              <div key={index} className='relative  rounded-md border bg-zinc-300  m-2 p-4 flex flex-col items-center h-28 md:h-48 w-1/3 md:w-1/3 lg:w-1/4 xl:w-1/5' style={{filter: 'drop-shadow(8px 8px 3px rgb(253 186 116))'}}>
                 <img 
                   alt="" 
-                  className='absolute rounded-md inset-0 object-cover bg-zinc-300 w-full h-full z-0' 
-                  src={(data.img ?? data.descriptions) || "./imgs/temple.png"} 
+                  className='absolute rounded-md inset-0 object-cover bg-zinc-300 w-full  h-full z-0' 
+                  src={(data.img ?? data.descriptions) || "./imgs/theyyamLandingPG2.png"} 
                 />
                 <p className='font-bold justify-end absolute bottom-1 p-2 z-10 bg-transparent backdrop-blur-sm rounded-md text-white text-xs md:text-lg'>{data.name || 'Not Found'}</p>
               </div>
