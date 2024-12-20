@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'street': ['Street Block', 'sans-serif'], // Add your custom font here
+        'street': ['Street Block', 'sans-serif'],
       },
       colors: {
         background: "var(--background)",

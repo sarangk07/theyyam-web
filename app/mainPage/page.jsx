@@ -21,8 +21,12 @@ function MainPage() {
 
 
 
-//gsap 
+//gsap -----------------
 const [titleRef, setTitleRef] = useState(null);
+const [leftW,setLeftW] = useState(null)
+const [rightW,setRightW] = useState(null)
+const [startbtn,setStartbtn] = useState(false)
+const [start,setStart] = useState(false)
 // const [theyyamBox, setTheyyamBox] = useState(null);
 
 
@@ -42,7 +46,34 @@ const [titleRef, setTitleRef] = useState(null);
 
 
 
+  useEffect(() =>{
+    if (typeof window !== 'undefined' && titleRef) {
+      gsap.to(leftW,{
+        left:-1200,
+        overflow:'hidden',
+        duration:3,
+        display:'none',
+        ease: "power1.inOut"
+      })
+      gsap.to(rightW,{
+        right:-1200,
+        overflow:'hidden',
+        duration:3,
+        display:'none',
+        ease: "power1.inOut"
+      })
+      gsap.to(startbtn,{
+        top:-600,
+        overflow:'hidden',
+        duration:2,
+        display:'none',
+        
+        ease: "power1.inOut"
+      })
+    }
+  },[start])
 
+//-------------------------
 
   useEffect(() => {
     const currentDate = new Date();
@@ -171,11 +202,55 @@ console.log('ttt',upcomingFestivals);
   }
 
   return (
+    <div className="relative w-full h-screen overflow-hidden">
+
+      <div 
+        ref={(el) => setLeftW(el)} 
+        className="fixed w-[50%] left-0 h-full border-r-8 border-yellow-400 bg-black z-40 overflow-hidden"
+      >
+        <div className="w-full h-full relative">
+          <img 
+            src="https://i.pinimg.com/1200x/dc/fd/da/dcfddabd6f5b2533fe615aeb49a295b0.jpg" 
+            alt="theyyamLPaG2"
+            className="absolute w-full h-full object-cover object-center md:object-right-top"
+          />
+          
+          <div className="absolute inset-0 bg-black/20" />
+        </div>
+      </div>
+      
+      <div 
+        ref={(el) => setRightW(el)} 
+        className="fixed w-[50%] right-0 h-full border-l-8 border-yellow-400 bg-black z-40 overflow-hidden"
+      >
+        <div className="w-full h-full relative">
+          <img 
+            src="https://i.pinimg.com/1200x/b8/c1/19/b8c119223267d926a457a0049a4aaa77.jpg" 
+            alt="theyyamLPaG1"
+            className="absolute w-full h-full object-cover object-center md:object-left-top"
+          />
+          
+          <div className="absolute inset-0 bg-black/20" />
+        </div>
+      </div>
+
+      <div 
+        ref={(el) => setStartbtn(el)}
+        onClick={() => setStart(true)} 
+        className="fixed rounded-tr-full border-2 border-yellow-300 backdrop-blur-md rounded-bl-full cursor-pointer top-[50%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 w-20 h-20 z-40 flex justify-center items-center bg-red-700"
+      >
+        <Swastika/> 
+        
+      </div>
+
     <div className='bg-amber-50 w-full cursor-default overflow-x-hidden h-screen'>
-      <div className='h-fit'>
+
+
+
+      <div className='h-fit relative'>
         <div className='h-1/4'>
         
-        {/* <img className='absolute -top-14 w-36 -left-2' src="/imgs/logo-theyyam.png" alt="" /> */}
+        
         <div ref={(el) => setTitleRef(el)} className='text-right text-black text-2xl md:text-3xl font-street relative font-extrabold bg-gradient-to-b from-amber-800 to-amber-400 p-4 pb-10'>
         <div className='absolute'>
           <Swastika/>   
@@ -185,14 +260,14 @@ console.log('ttt',upcomingFestivals);
         
         
         </div>
-
-        <div className='h-3/4  bg-gradient-to-t  from-amber-50 to-amber-400 overflow-auto'>
-        
         <h3 
-          className='font-mono pl-5 pr-5 mt-5 bg-transparent border-b-2 text-emerald-950 text-left'
+          className='font-mono px-4 absolute w-full flex-wrap bg-transparent border-b-2 text-emerald-950 text-left'
         >
         Theyyam Festival Happening Now [With in 10 Days....]
-      </h3>  
+      </h3> 
+        <div className='h-3/4 md:pt-3 font-serif pt-10 bg-gradient-to-t  from-amber-50 to-amber-400 overflow-auto'>
+        
+         
           <div className='flex  justify-between w-fit mt-4'>
             {upcomingFestivals.map((item, index) => (
               <div key={index} className='text-zinc-800 flex-wrap cursor-default my-5 bg-gradient-to-t from-amber-200 to-amber-600 rounded-md border-4 border-amber-200 p-5  flex flex-col items-center justify-center lg:flex-row mr-10 ml-5  w-80  lg:w-96'>
@@ -209,7 +284,7 @@ console.log('ttt',upcomingFestivals);
                     
                   </div>
                    
-                  <p>Theyyams:</p>
+                  <p className='font-bold text-sm'>Theyyams:</p>
                   {item.theyyams && item.theyyams.length > 0 ? (
                     <div className='flex flex-wrap'>
                       {item.theyyams.map((theyyam, index) => (
@@ -234,16 +309,16 @@ console.log('ttt',upcomingFestivals);
       </div>
 
       <div className='h-fit bg-amber-50 text-zinc-800'>
-      <div className='pt-4 pb-3'>
+      {/* <div className='pt-4 pb-3'>
         <div className='flex justify-center items-center flex-col'>
         <input type="search" className='w-56 text-black ' placeholder='Search Temples/Theyyams'/>
         </div>
-      </div>
-      <div>
+      </div> */}
+      <div className='mt-3'>
 
         <div className='flex justify-between px-4'>
-            <h1 className='cursor-pointer' onClick={()=>setChoice('cal')}>Theyyam Calender</h1>
-            <h1 className='cursor-pointer' onClick={()=>setChoice('default')}>Theyyam Gallery</h1>
+            <h1 className='cursor-pointer font-mono font-semibold' onClick={()=>setChoice('cal')}>Theyyam Calender</h1>
+            <h1 className='cursor-pointer font-mono font-semibold' onClick={()=>setChoice('default')}>Theyyam Gallery</h1>
         </div>
 
         <div>
@@ -273,6 +348,9 @@ console.log('ttt',upcomingFestivals);
       </div>
       </div>
     </div>
+
+    </div>
+
   );
 }
 
