@@ -1,17 +1,16 @@
 
-import { openDB } from '@/db.mjs';  // Adjust the import path according to your project structure
+import { openDB } from '@/db.mjs';  
 import { sign } from 'jsonwebtoken';
 import bcrypt from 'bcryptjs';
 import { NextResponse } from 'next/server';
 
-const SECRET_KEY = 'your-secret-key'; // In production, use environment variable
-
+const SECRET_KEY = 'your-secret-key'; 
 export async function POST(request) {
     try {
         const { username, password } = await request.json();
         const db = await openDB();
 
-        // Get admin user from database
+       
         const admin = await db.get('SELECT * FROM admins WHERE username = ?', [username]);
         
         if (!admin) {
@@ -21,7 +20,7 @@ export async function POST(request) {
             );
         }
 
-        // Compare passwords
+        
         const passwordMatch = await bcrypt.compare(password, admin.password);
         
         if (!passwordMatch) {
@@ -31,7 +30,7 @@ export async function POST(request) {
             );
         }
 
-        // Create JWT token
+        
         const token = sign(
             { id: admin.id, username: admin.username },
             SECRET_KEY,

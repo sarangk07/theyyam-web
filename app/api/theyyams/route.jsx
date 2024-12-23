@@ -73,7 +73,7 @@ export async function POST(request) {
 
 
 
-//DELETE endpoint
+//DELETE 
 export async function DELETE(request) {
     const db = await openDB();
     try {

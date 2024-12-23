@@ -27,7 +27,7 @@ function Calendar({ templesData, TodayDate }) {
 
   return (
     <div className='flex flex-col'>
-      <div className='m-3 p-1 text-center rounded-md bg-zinc-400 flex flex-wrap'>
+      <div className='m-3 p-1 text-center rounded-md text-white bg-yellow-600 flex flex-wrap'>
         {months.map((month, index) => (
           <div 
             key={index} 

@@ -1,11 +1,12 @@
-import MainPage from "./mainPage/page";
+
+import Landpage from "./landpage/page";
 
 
 
 export default function Home() {
   return (
     <>
-      <MainPage/>
+      <Landpage/>
     </>
   );
 }

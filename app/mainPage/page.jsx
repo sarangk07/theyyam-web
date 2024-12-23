@@ -7,9 +7,9 @@ import { LocalTempleData } from '../api/localData/Ltemples';
 import { LocalTheyyamData } from '../api/localData/Ltheyyams';
 import gsap from 'gsap';
 import Swastika from '../componets/customLoader';
+import theyyamView from '../theyyam/[id]/page';
+import { useRouter } from 'next/navigation';
 
-// "react": "19.0.0-rc-02c0e824-20241028",
-// "react-dom": "19.0.0-rc-02c0e824-20241028",
 function MainPage() {
   const [temples, setTemples] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -17,19 +17,12 @@ function MainPage() {
 
   const [today, setToday] = useState(null);
   const [tenDaysFromNow, setTenDaysFromNow] = useState(null);
-
-
-
+  const route = useRouter()
 
 //gsap -----------------
 const [titleRef, setTitleRef] = useState(null);
-const [leftW,setLeftW] = useState(null)
-const [rightW,setRightW] = useState(null)
-const [startbtn,setStartbtn] = useState(false)
-const [start,setStart] = useState(false)
+
 // const [theyyamBox, setTheyyamBox] = useState(null);
-
-
 
   useEffect(() => {
     
@@ -43,35 +36,6 @@ const [start,setStart] = useState(false)
       });
     }
   }, [titleRef]);
-
-
-
-  useEffect(() =>{
-    if (typeof window !== 'undefined' && titleRef) {
-      gsap.to(leftW,{
-        left:-1200,
-        overflow:'hidden',
-        duration:3,
-        display:'none',
-        ease: "power1.inOut"
-      })
-      gsap.to(rightW,{
-        right:-1200,
-        overflow:'hidden',
-        duration:3,
-        display:'none',
-        ease: "power1.inOut"
-      })
-      gsap.to(startbtn,{
-        top:-600,
-        overflow:'hidden',
-        duration:2,
-        display:'none',
-        
-        ease: "power1.inOut"
-      })
-    }
-  },[start])
 
 //-------------------------
 
@@ -111,7 +75,7 @@ const [start,setStart] = useState(false)
   const [choice,setChoice] = useState('default')
   const upcomingFestivals = getUpcomingFestivals();
 
-console.log('ttt',upcomingFestivals);
+// console.log('ttt',upcomingFestivals);
 
 
   useEffect(() => {
@@ -203,62 +167,15 @@ console.log('ttt',upcomingFestivals);
 
   return (
     <div className="relative w-full h-screen overflow-hidden">
-
-      <div 
-        ref={(el) => setLeftW(el)} 
-        className="fixed w-[50%] left-0 h-full border-r-8 border-yellow-400 bg-black z-40 overflow-hidden"
-      >
-        <div className="w-full h-full relative">
-          <img 
-            src="https://i.pinimg.com/1200x/dc/fd/da/dcfddabd6f5b2533fe615aeb49a295b0.jpg" 
-            alt="theyyamLPaG2"
-            className="absolute w-full h-screen object-cover object-center md:object-right-top"
-          />
-          
-          <div className="absolute inset-0 bg-black/20" />
-        </div>
-      </div>
-      
-      <div 
-        ref={(el) => setRightW(el)} 
-        className="fixed w-[50%] right-0 h-full border-l-8 border-yellow-400 bg-black z-40 overflow-hidden"
-      >
-        <div className="w-full h-full relative">
-          <img 
-            src="https://i.pinimg.com/1200x/b8/c1/19/b8c119223267d926a457a0049a4aaa77.jpg" 
-            alt="theyyamLPaG1"
-            className="absolute w-full h-screen object-cover object-center md:object-left-top"
-          />
-          
-          <div className="absolute inset-0 bg-black/20" />
-        </div>
-      </div>
-
-      <div 
-        ref={(el) => setStartbtn(el)}
-        onClick={() => setStart(true)} 
-        className="fixed rounded-tr-full border-2 border-yellow-300 backdrop-blur-md rounded-bl-full cursor-pointer top-[50%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 w-20 h-20 z-40 flex justify-center items-center bg-red-700"
-      >
-        <Swastika/> 
-        
-      </div>
-
     <div className='bg-amber-50 w-full cursor-default overflow-x-hidden h-screen'>
-
-
-
       <div className='h-fit relative'>
         <div className='h-1/4'>
-        
-        
         <div ref={(el) => setTitleRef(el)} className='text-right text-black text-2xl md:text-3xl font-street relative font-extrabold bg-gradient-to-b from-red-800 to-orange-400 p-4 pb-10'>
         <div className='absolute'>
           <Swastika/>   
         </div>    
           <p>Theyyam Web</p>
         </div>
-        
-        
         </div>
         <h3 
           className='font-mono px-4 absolute w-full flex-wrap bg-transparent border-b-2 text-emerald-950 text-left'
@@ -266,8 +183,6 @@ console.log('ttt',upcomingFestivals);
         Theyyam Festival Happening Now [With in 10 Days....]
       </h3> 
         <div className='h-3/4 md:pt-3 font-serif pt-10 bg-gradient-to-t  from-amber-50 to-orange-400 overflow-auto'>
-        
-         
           <div className='flex  justify-between w-fit mt-4'>
             {upcomingFestivals.map((item, index) => (
               <div key={index} className='text-zinc-800 flex-wrap cursor-default my-5 bg-gradient-to-t from-orange-200 to-orange-600 rounded-md border-4 border-orange-200 p-5  flex flex-col items-center justify-center lg:flex-row mr-10 ml-5  w-80  lg:w-96'>
@@ -280,8 +195,7 @@ console.log('ttt',upcomingFestivals);
                     <div className='text-xs flex justify-between lg:flex-col'>
                         <p>Starts: {item.festival_start_time}</p>
                         <p>Ends: {item.festival_end_time}</p>
-                    </div>
-                    
+                    </div> 
                   </div>
                    
                   <p className='font-bold text-sm'>Theyyams:</p>
@@ -295,9 +209,7 @@ console.log('ttt',upcomingFestivals);
                     </div>
                   ) : (
                     <>No Datas</>
-                  )}
-
-                    
+                  )}  
                 </div>
                 <div>
                   <img className='max:w-40 min-w-36 md:min-w-40 rounded-sm' src={(item.img ?? item.address) || "./imgs/temple.png"} alt={item.name} width={100} height={100} />
@@ -309,13 +221,7 @@ console.log('ttt',upcomingFestivals);
       </div>
 
       <div className='h-fit bg-orange-50 text-zinc-800'>
-      {/* <div className='pt-4 pb-3'>
-        <div className='flex justify-center items-center flex-col'>
-        <input type="search" className='w-56 text-black ' placeholder='Search Temples/Theyyams'/>
-        </div>
-      </div> */}
       <div className='mt-3'>
-
         <div className='flex justify-between px-4'>
             <h1 className='cursor-pointer font-mono font-semibold' onClick={()=>setChoice('cal')}>Theyyam Calender</h1>
             <h1 className='cursor-pointer font-mono font-semibold' onClick={()=>setChoice('default')}>Theyyam Gallery</h1>
@@ -332,10 +238,12 @@ console.log('ttt',upcomingFestivals);
             <>
             <div className='flex flex-wrap justify-center pb-10 pt-10 ' >
             {theyyam.map((data, index) => (
-              <div key={index} className='relative  rounded-md border bg-zinc-300  m-2 p-4 flex flex-col items-center h-28 md:h-48 w-1/3 md:w-1/3 lg:w-1/4 xl:w-1/5' style={{filter: 'drop-shadow(8px 8px 3px rgb(253 186 116))'}}>
+              <div key={index}
+                onClick={() => route.push(`/theyyam/${data.id}`)}
+                className='relative  cursor-pointer rounded-md border bg-zinc-300  m-2 p-4 flex flex-col items-center h-28 md:h-48 w-1/3 md:w-1/3 lg:w-1/4 xl:w-1/5' style={{filter: 'drop-shadow(8px 8px 3px rgb(253 186 116))'}}>
                 <img 
                   alt="" 
-                  className='absolute rounded-md inset-0 object-cover bg-zinc-300 w-full  h-full z-0' 
+                  className='absolute rounded-md inset-0 object-cover bg-orange-200 w-full  h-full z-0' 
                   src={(data.img ?? data.descriptions) || "./imgs/theyyamLandingPG2.png"} 
                 />
                 <p className='font-bold justify-end absolute bottom-1 p-2 z-10 bg-transparent backdrop-blur-sm rounded-md text-white text-xs md:text-lg'>{data.name || 'Not Found'}</p>

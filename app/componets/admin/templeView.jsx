@@ -32,7 +32,7 @@ const TemplesView = () => {
 
 
 
-    //search results
+    //search ----
     const filteredtemples = useMemo(() => {
         if (!searchInput.trim()) {
             return temples;

@@ -60,20 +60,20 @@ const EditTheyyam = ({ theyyamId, initialData, onUpdateSuccess, onCancel }) => {
 
       const formDataToSend = new FormData();
       
-      // non-file fields
+     
       Object.keys(formData).forEach(key => {
         if (key !== 'img' && key !== 'imgs') {
           formDataToSend.append(key, formData[key]);
         }
       });
 
-      // single image upload
+      // single image upload----
       const imgInput = document.querySelector('input[name="img"]');
       if (imgInput?.files.length > 0) {
         formDataToSend.append('img', imgInput.files[0]);
       }
 
-      // multiple images upload
+      // multiple images upload-----
       const imgsInput = document.querySelector('input[name="imgs"]');
       if (imgsInput?.files.length > 0) {
         Array.from(imgsInput.files).forEach(file => {

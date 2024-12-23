@@ -64,7 +64,7 @@ export const LocalTheyyamData = [
       	"created_at":"2024-11-08 04:23:37", 
       	"descriptions":"https://imgs.search.brave.com/k_3EPYwH3jvJr7o_gZxZWbHNwca4kLkoIYibi8Y7-Ho/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy8z/LzNlL1BvdHRhbl9U/aGV5eWFtLV9TVU5J/TF9QQU5JS0VSXy0w/MDIuanBn", 
       	"god":"Bhagavathy", 
-      	"id" :6, 
+      	"id": 6, 
       	"img" :null, 
       	"imgs":[null], 
       	"name":"Pottan Theyyam", 

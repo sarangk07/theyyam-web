@@ -2,7 +2,7 @@ import { openDB } from '../../../db.mjs';
 import { headers } from 'next/headers';
 import { NextResponse } from 'next/server';
 
-//verify token
+//verify token----------------
 async function verifyToken(headersList) {
     const authorization = headersList.get('authorization');
     if (!authorization || !authorization.startsWith('Bearer ')) {
@@ -18,7 +18,7 @@ export async function GET() {
         const db = await openDB();
         const temples = await db.all('SELECT * FROM temples');
         
-        // Get theyyams
+        // Get theyyams---------------
         for (let temple of temples) {
             const theyyams = await db.all(`
                 SELECT t.* FROM theyyams t

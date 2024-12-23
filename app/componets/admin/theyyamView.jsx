@@ -28,7 +28,6 @@ const TheyyamView = () => {
         }
     };
 
-    // search results
     const filteredTheyyams = useMemo(() => {
         if (!searchInput.trim()) {
             return theyyams;

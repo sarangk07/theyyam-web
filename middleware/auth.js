@@ -1,6 +1,6 @@
 import { verify } from 'jsonwebtoken';
 
-const SECRET_KEY = process.env.JWT_SECRET || 'your-secret-key'; // Use environment variable in production
+const SECRET_KEY = process.env.JWT_SECRET || ''; 
 
 export function authenticateToken(handler) {
     return async (req, res) => {

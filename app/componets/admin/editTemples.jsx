@@ -1,4 +1,4 @@
-// UpdateTempleForm.jsx
+
 import { useState } from 'react';
 
 export default function UpdateTempleForm({ templeId, initialData, onUpdateSuccess, onCancel }) {
