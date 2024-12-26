@@ -184,6 +184,11 @@ const [titleRef, setTitleRef] = useState(null);
       </h3> 
         <div className='h-3/4 md:pt-3 font-serif pt-10 bg-gradient-to-t  from-amber-50 to-orange-400 overflow-auto'>
           <div className='flex  justify-between w-fit mt-4'>
+            
+            
+            
+            {upcomingFestivals && upcomingFestivals.length > 0 ? 
+            <>
             {upcomingFestivals.map((item, index) => (
               <div key={index} className='text-zinc-800 flex-wrap cursor-default my-5 bg-gradient-to-t from-orange-200 to-orange-600 rounded-md border-4 border-orange-200 p-5  flex flex-col items-center justify-center lg:flex-row mr-10 ml-5  w-80  lg:w-96'>
                 <div className='mb-4 lg:mb-2 lg:mr-5'>
@@ -216,6 +221,12 @@ const [titleRef, setTitleRef] = useState(null);
                 </div>
               </div>
             ))}
+            </> 
+            :
+            <>
+              <p className='text-orange-900 pl-4  flex justify-center items-center'>Sorry No Temples Found with Theyyams...</p>
+            </>}
+            
           </div>
         </div>
       </div>
