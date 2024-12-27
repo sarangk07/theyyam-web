@@ -9,6 +9,7 @@ import gsap from 'gsap';
 import Swastika from '../componets/customLoader';
 import theyyamView from '../theyyam/[id]/page';
 import { useRouter } from 'next/navigation';
+import IntroductionText from '../componets/IntroductionText';
 
 function MainPage() {
   const [temples, setTemples] = useState([]);
@@ -227,6 +228,9 @@ const [titleRef, setTitleRef] = useState(null);
               <p className='text-orange-900 pl-4  flex justify-center items-center'>Sorry No Temples Found with Theyyams...</p>
             </>}
             
+          </div>
+          <div className='mt-5  '>
+            <IntroductionText/>
           </div>
         </div>
       </div>
