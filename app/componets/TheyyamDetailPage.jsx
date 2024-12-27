@@ -78,17 +78,6 @@ export default function TheyyamDetailPage() {
           {theyyamData.god && (
             <p className="text-xl mb-2">Deity: {theyyamData.god}</p>
           )}
-          {/* <div className="flex items-center">
-            <span className="mr-2">Power:</span>
-            {[...Array(5)].map((_, index) => (
-              <span
-                key={index}
-                className={index < theyyamData.popularity ? 'text-yellow-500' : 'text-gray-500'}
-              >
-                ★
-              </span>
-            ))}
-          </div> */}
           <div>
             <p className='underline underline-offset-2 mt-10'>Story</p>
             {theyyamData && theyyamData.story ?
