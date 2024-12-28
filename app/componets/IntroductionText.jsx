@@ -3,13 +3,13 @@ import React from 'react'
 function IntroductionText() {
   return (
     <div className='relative overflow-hidden rounded-tr-[5rem] rounded-bl-[5rem]'>
-    <img src="/imgs/introtextbgImg.jpg" alt="introtextbgImg" className='absolute opacity-80 bg-red-500 w-screen h-screen object-cover  z-0'/>
+    <img src="/imgs/introtextbgImg.jpg" alt="introtextbgImg" className='absolute opacity-80 bg-transparent w-screen h-screen object-cover  z-0'/>
     
     
-    <h2 className='text-zinc-200 z-10 relative p-1 lg:text-lg  text-wrap backdrop-blur-2xl backdrop-brightness-75 font-semibold'>About Theyyam</h2>
+    <h2 className='text-zinc-200 z-10 relative p-1 lg:text-lg  text-wrap backdrop-blur-0 backdrop-brightness-75 font-semibold'>About Theyyam</h2>
 
     <p className='text-zinc-200 z-10 relative p-8 pb-1 pt-2 lg:text-lg  text-wrap backdrop-blur-sm backdrop-brightness-75 font-semibold'>
-      Theyyam, also known as Kaliyattam, is a vibrant and sacred ritual dance form originating from North Kerala, particularly in the regions of Kannur and Kasaragod. This unique art form combines elements of dance, mime, and music, serving as a profound expression of spirituality and cultural heritage for the local communities.
+      Theyyam, also known as Kaliyattam, is a vibrant and sacred Hindu religious ritual dance form originating from North Kerala, particularly in the regions of Kannur and Kasaragod. This unique art form combines elements of dance, mime, and music, serving as a profound expression of spirituality and cultural heritage for the local communities.
     </p>
 
     <p className='text-zinc-200 relative z-10 p-8 pt-2 lg:text-lg text-wrap backdrop-blur-sm backdrop-brightness-75 font-semibold'>
