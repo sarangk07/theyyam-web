@@ -64,7 +64,7 @@ export default function TheyyamDetailPage() {
       <div 
         className="w-full flex flex-col  bg-gradient-to-t from-zinc-950 to-red-900 justify-center items-center  absolute text-white"
       >
-      <button className='absolute top-3 left-3 z-50' onClick={()=>route.push('/mainPage')}>back</button>
+      <button className='absolute top-3 left-3 z-50' onClick={()=>route.push('/mainPage')}>Back</button>
 
         <div className="relative  w-full max-w-4xl mx-auto p-6">
           <div className="mb-8 mt-10">

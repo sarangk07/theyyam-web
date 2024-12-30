@@ -176,7 +176,7 @@ export const LocalTempleData = [
     	"phone" :null,  
     	"place":"Irikkur",  
     	"popularity ":3,  
-    	"theyyams":['Gulikan','Vishnumoorthy ','Raktheswari']
+    	"theyyams":['Gulikan','Vishnumoorthi ','Raktheswari']
     },
 
 	{
@@ -194,7 +194,7 @@ export const LocalTempleData = [
     	"phone" :null,  
     	"place":"Cheruthazham",  
     	"popularity ":4,  
-    	"theyyams":['Muchilot Bhagavathi','Vishnumoorthy ','Kundor Chamundi','Puliyoor Kannan','Kannagattu Bhagavathi','Narambil Bhagavathi']
+    	"theyyams":['Muchilot Bhagavathi','Vishnumoorthi ','Kundor Chamundi','Puliyoor Kannan','Kannagattu Bhagavathi','Narambil Bhagavathi']
     },
 
 	{
@@ -229,7 +229,7 @@ export const LocalTempleData = [
     	"phone" :null,  
     	"place":"Thalassery",  
     	"popularity ":3,  
-    	"theyyams":['Gulikan','Karanavar ','Pothi','Nagabhagavathy','Bhairavan','kuttichathan','bhagavathi','Vishnumoorthy']
+    	"theyyams":['Gulikan','Karanavar ','Pothi','Nagabhagavathy','Bhairavan','kuttichathan','bhagavathi','Vishnumoorthi']
     },
 	{
     	"address":"", 
@@ -264,5 +264,26 @@ export const LocalTempleData = [
     	"place":"Ezhom",  
     	"popularity ":3,  
     	"theyyams":['Vettakkorumakan','Oorpazhassi Daivathaar']
+    },
+
+
+
+
+	{
+    	"address":"https://travelkannur.com/wp-content/uploads/2016/05/mundya1-730x428.jpg", 
+    	"created_at":"2024-12-30 05:41:27", 
+    	"festival_duration_days" :11, 
+    	"festival_end_time":"May 15", 
+    	"festival_start_time":"May 4", 
+    	"id" :18, 
+    	"images":[] , 
+    	"img" :null, 
+    	"location" :null, 
+    	"malayala_masam":"Medam 21-Edavam 1",  
+    	"name":"Cheemeni Sree Vishnumurthy Kshetram",  
+    	"phone" :null,  
+    	"place":"Kasargod-Cheemeni",  
+    	"popularity ":5,  
+    	"theyyams":['Vishnumoorthi','Raktha Chamundi']
     },
 ]

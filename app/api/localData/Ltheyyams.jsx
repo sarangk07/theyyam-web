@@ -13,7 +13,7 @@ export const LocalTheyyamData = [
     },
     {
         "created_at": "2024-11-08 04:23:37",
-        "descriptions": "",
+        "descriptions": "https://i.pinimg.com/1200x/59/5f/2b/595f2bf0e4a1b5c8bd2a0ca027af429c.jpg",
         "god": "Bhagavathy",
         "id": 2,
         "img": null,
@@ -121,6 +121,59 @@ export const LocalTheyyamData = [
         "name": "Bhairavan",
         "popularity": 3,
         "story": "ഭൈരവന്‍ തെയ്യം ഇതിവൃത്തം ബ്രഹ്മഹത്യാശാപം നിമിത്തം മണ്ണില്‍ കപാലവുമേന്തി ഭിക്ഷാടനം ചെയ്യേണ്ടിവന്ന ശിവരൂപമാണ് ഭൈരവന്‍. ദേവാദിദേവാനാം മഹേശ്വരന്‍റെ വിരാട് സ്വരൂപം കണ്ടുവെന്ന് ബ്രഹ്മാവ്‌ ഒരിക്കല്‍ കള്ളം പറയുകയുണ്ടായി. എന്നാല്‍ ഇതുവരെ ആരും ദര്‍ശിച്ചിട്ടില്ലാത്ത തന്‍റെ വിശ്വരൂപം ബ്രഹ്മാവ്‌ കണ്ടുവെന്ന്‍ പറഞ്ഞപ്പോള്‍ പരമേശ്വരന് സഹിച്ചില്ല. കുപിതനായ കൈലാസനാഥന്‍ വിധാതാവിന്‍റെ നാല് ശിരസ്സുകളില്‍ ഒന്ന് അടര്‍ത്തിയെടുത്ത് ദൂരെയെറിഞ്ഞു. എന്നാല്‍ ഫലമോ ബ്രഹ്മഹത്യാശാപം “പന്തീരായിരം സംവത്സരം കപാലവുമേന്തി മനുഷ്യലോകത്ത് ഭിക്ഷ യാചിച്ച് നടക്കട്ടെ നീ” ബ്രഹ്മാദേവന്‍ രുദ്രനെ ശപിച്ചു. തന്മൂലം ഭിക്ഷാപാത്രമാം കപാലവും കയ്യിലേന്തി, പൊയ്ക്കണ്ണും ധരിച്ച് ശരണഗതി തേടി മാനുഷലോകത്തിന്‍റെ മണ്‍പാതകളിലൂടെ സഹസ്രാബ്ദങ്ങളോളം അലഞ്ഞു ഭൈരവരൂപിയാം മഹാദേവന്‍. ഈ ഭിക്ഷാടകരൂപമാണ് ഭൈരവന്‍ തെയ്യമായി കെട്ടിയാടുന്നത്.മലയൻ സമുദായക്കാരാണ് ഈ തെയ്യം കെട്ടിയാടുന്നത്.",
+        "temples": []
+    },
+
+
+
+    {
+        "created_at": "2024-12-30 04:23:37",
+        "descriptions": "https://i.pinimg.com/1200x/3c/cb/73/3ccb73327182c2c7967e1ebf2cfdb244.jpg",
+        "god": "Vishnu",
+        "id": 12,
+        "img": null,
+        "imgs": [null],
+        "name": "Vishnumoorthi",
+        "popularity": 4,
+        "story": "Vishnumoorthi Theyyam is the most popular Vaishnava Theyyam. This theyyam is known for its loud and peculiar drum beats which can be heard up to 2 kms surrounding the place of origin. The most fascinating ritual in the Vishnumoorthi Theyyam is the Agnipravesham. The Vishnumoorthi Ottakolam enters the pyre many times during the performance. Vishnumoorthy Theyyam enacts the Narasimha Avatar of Lord Vishnu. Lord Vishnu took the form of Narasimha to kill Hiranyakashipu, the demon king and father of Prahlada.",
+        "temples": []
+    },
+
+    {
+        "created_at": "2024-12-30 04:23:37",
+        "descriptions": "https://travelkannur.com/wp-content/uploads/2015/04/thiruvappana_theyyam.jpg",
+        "god": "Vishnu",
+        "id": 13,
+        "img": null,
+        "imgs": [null],
+        "name": "Thiruvappana",
+        "popularity": 3,
+        "story": "നായാട്ടു ദൈവങ്ങളുടെ ഗണത്തിലാണ് മുത്തപ്പന്‍ ഉള്‍പ്പെടുന്നത്. വര്‍ഷത്തില്‍ എല്ലാ ദിവസവവും മുത്തപ്പന്‍ കെട്ടിയാടുന്നത്‌ പറശ്ശിനിക്കടവ് മുത്തപ്പന്‍ മടപ്പുരയിലാണ്. മുത്തപ്പന്റെ ആരൂഡ സ്ഥാനമായി കണക്കാക്കുന്നത് കുന്നത്തൂര്‍ പാടി, പുരളിമല എന്നിവിടങ്ങളാണ്. ശ്രീ മുത്തപ്പന്‍ ഒരു ദൈവമാണെങ്കിലും രണ്ടു ദൈവിക രൂപങ്ങളെപ്രതിനിധാനം ചെയ്യുന്നു. തിരുവപ്പന, വെള്ളാട്ടം എന്നിവയാണ് ആ രൂപങ്ങള്‍. മത്സ്യത്തിന്റെ രൂപത്തിലുള്ള കിരീടം വെച്ച് വിഷ്ണുവിനെയും, ചന്ദ്രക്കലയുടെ രൂപത്തിലുള്ള കിരീടം വെച്ച് ശിവനെയും ഒരേ പോലെ പ്രതിനിധാനം ചെയ്യുന്നു.",
+        "temples": []
+    },
+
+    {
+        "created_at": "2024-12-30 04:23:37",
+        "descriptions": "https://i.pinimg.com/736x/22/ae/0b/22ae0b3e829e3aa94cc80a9d14555d1f.jpg",
+        "god": "Bali",
+        "id": 14,
+        "img": null,
+        "imgs": [null],
+        "name": "Bali",
+        "popularity": 3,
+        "story": "വിശ്വവിശ്രുതമായ രാമായണകഥയിലെ ശ്രീരാമഭക്തനായ ബാലി തന്നെയാണ് ബാലി തെയ്യം. സുഗ്രീവസഹോദരനായ ബാലി രാമബാണമേറ്റ് വീരമൃത്യു വരിച്ചപ്പോൾ ആ ധീരനെ ആരാധ്യപദവിയിലേക്ക് ഉയർത്തിയതാണ് ശ്രീരാമദേവൻ. ഭൂമി കുലുങ്ങുമാറ് പിറവികൊണ്ട ബാലകനാണ് ബാലി. പുണ്യതീർത്ഥമായ വടുവക്കോട്ടയിൽ കുളികുറിതേവാരം കഴിച്ച് ബാലി വന്നുചേർന്നപ്പോൾ അവിടെ ഭക്തോത്തമനായ മണ്ണുമ്മൽ പ്രധാനിയായിരുന്ന വിശ്വകർമാവിനെ കണ്ടുമുണ്ടി. വിശ്വകർമാവിന്റെ കെട്ടും ചുറ്റും കുറിയും നെറിയും അടുക്കും ആചാരവും കണ്ട് കയ്യൊഴിച്ച്കൂടാ എന്ന് കരുതി ബാലി അദ്ദേഹത്തിനൊപ്പം എരമം മണ്ണുമ്മൽ സ്ഥാനത്തേക്ക് ശേഷിക്കപ്പെടുന്നു. പിന്നീട് മോറാഴ, കുറുന്താഴ, വടക്കൻ കൊവ്വൽ എന്നിവിടങ്ങളിൽ പീഠം നേടി വിശ്വകർമജരുടെ കുലദൈവമായി ഒരുവിളിക്കൊമ്പത്തു കൂറ്റുകാട്ടി ക്ഷേത്രത്തിൽ രക്ഷകനായി നിലകൊള്ളുന്നു.",
+        "temples": []
+    },
+    {
+        "created_at": "2024-12-30 04:23:37",
+        "descriptions": "https://trablogger.com/wp-content/uploads/2014/09/img_9634-fileminimizer.jpg",
+        "god": "Sugriva",
+        "id": 15,
+        "img": null,
+        "imgs": [null],
+        "name": "Sugriva",
+        "popularity": 3,
+        "story": "",
         "temples": []
     },
 ]

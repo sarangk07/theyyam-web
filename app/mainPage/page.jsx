@@ -30,7 +30,7 @@ const [titleRef, setTitleRef] = useState(null);
     if (typeof window !== 'undefined' && titleRef) {
       gsap.to(titleRef, {
         color: 'white', 
-        duration: 9, 
+        duration:15, 
         repeat: -1, 
         yoyo: true, 
         ease: "power1.inOut"
