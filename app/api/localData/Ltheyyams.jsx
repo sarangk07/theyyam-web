@@ -176,4 +176,18 @@ export const LocalTheyyamData = [
         "story": "",
         "temples": []
     },
+    
+
+    {
+        "created_at": "2024-12-30 04:23:37",
+        "descriptions": "https://images.keralapicnicspot.com/10-Dhoomavathi-Theyyam-1-837x1024.jpg",
+        "god": "Devi",
+        "id": 16,
+        "img": null,
+        "imgs": [null],
+        "name": "Dhoomavathi",
+        "popularity": 3,
+        "story": "",
+        "temples": []
+    },
 ]
