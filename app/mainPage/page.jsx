@@ -30,7 +30,7 @@ const [titleRef, setTitleRef] = useState(null);
     if (typeof window !== 'undefined' && titleRef) {
       gsap.to(titleRef, {
         color: 'white', 
-        duration:15, 
+        duration:25, 
         repeat: -1, 
         yoyo: true, 
         ease: "power1.inOut"
@@ -229,10 +229,11 @@ const [titleRef, setTitleRef] = useState(null);
             </>}
             
           </div>
-          <div className='mt-5  '>
+          
+        </div>
+        <div className='mt-5  '>
             <IntroductionText/>
           </div>
-        </div>
       </div>
 
       <div className='h-fit bg-orange-50 text-zinc-800'>

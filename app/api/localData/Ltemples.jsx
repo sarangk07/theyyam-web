@@ -265,10 +265,6 @@ export const LocalTempleData = [
     	"popularity ":3,  
     	"theyyams":['Vettakkorumakan','Oorpazhassi Daivathaar']
     },
-
-
-
-
 	{
     	"address":"https://travelkannur.com/wp-content/uploads/2016/05/mundya1-730x428.jpg", 
     	"created_at":"2024-12-30 05:41:27", 
@@ -286,4 +282,99 @@ export const LocalTempleData = [
     	"popularity ":5,  
     	"theyyams":['Vishnumoorthi','Raktha Chamundi']
     },
+
+
+
+
+
+
+
+	{
+    	"address":"", 
+    	"created_at":"2025-02-01 05:41:27", 
+    	"festival_duration_days" :2, 
+    	"festival_end_time":"February  04", 
+    	"festival_start_time":"February 03", 
+    	"id" :19, 
+    	"images":[] , 
+    	"img" :null, 
+    	"location" :null, 
+    	"malayala_masam":"Makaram 21,22",  
+    	"name":"Eyyankkallu sri vishnumoorthikavu",  
+    	"phone" :null,  
+    	"place":"Payyannur",  
+    	"popularity ":3,  
+    	"theyyams":['VishnuMoorthi, Karinchamundi, veeran, Kattumoorthi']
+    },
+	{
+    	"address":"", 
+    	"created_at":"2025-02-01 05:41:27", 
+    	"festival_duration_days" :4, 
+    	"festival_end_time":"February  09", 
+    	"festival_start_time":"February 06", 
+    	"id" :20, 
+    	"images":[] , 
+    	"img" :null, 
+    	"location" :null, 
+    	"malayala_masam":"Makaram 23,26",  
+    	"name":"Madayi Sree Muchilottu Bhagavathi Kshethram",  
+    	"phone" :null,  
+    	"place":"Madayi",  
+    	"popularity ":4,  
+    	"theyyams":['Vishnumoorthy, Puliyoor Kannan, Narambil Bhagavathi, puliyoor kali, Kannagattu Bhagavathi, Muchilottu Bhagavathi']
+    },
+	{
+    	"address":"", 
+    	"created_at":"2025-02-01 05:41:27", 
+    	"festival_duration_days" :5, 
+    	"festival_end_time":"February 12", 
+    	"festival_start_time":"February 08", 
+    	"id" :21, 
+    	"images":[] , 
+    	"img" :null, 
+    	"location" :null, 
+    	"malayala_masam":"Makaram 25,29",  
+    	"name":"Kangol Alakkad Konginichal Kavu",  
+    	"phone" :null,  
+    	"place":"Payyannur",  
+    	"popularity ":4,  
+    	"theyyams":['Vishnumoorthy, Raktha Chamundi, Konginachal Bhagavathy, Kattu Moorthy, Kannikkorumakan, kannikoru makan dhaivam']
+    },
+	{
+    	"address":"", 
+    	"created_at":"2025-02-01 05:41:27", 
+    	"festival_duration_days" :4, 
+    	"festival_end_time":"February 19", 
+    	"festival_start_time":"February 16", 
+    	"id" :22, 
+    	"images":[] , 
+    	"img" :null, 
+    	"location" :null, 
+    	"malayala_masam":"Kumbham  4,5",  
+    	"name":"Andalurkavu",  
+    	"phone" :null,  
+    	"place":"Thalisseri",  
+    	"popularity ":3,  
+    	"theyyams":['Bali, Sugreevan, Daivathar, Ankakaran, Seethayum makkalum']
+    },
+	{
+    	"address":"", 
+    	"created_at":"2025-02-01 05:41:27", 
+    	"festival_duration_days" :3, 
+    	"festival_end_time":"February 27", 
+    	"festival_start_time":"February 25", 
+    	"id" :23, 
+    	"images":[] , 
+    	"img" :null, 
+    	"location" :null, 
+    	"malayala_masam":"Kumbham 13,15",  
+    	"name":"Kunnubram Sree Vairajathan Kshetham",  
+    	"phone" :null,  
+    	"place":"Payyannur",  
+    	"popularity ":3,  
+    	"theyyams":['Thayi Paradevatha,Vairajaathan']
+    },
+	
+
+
 ]

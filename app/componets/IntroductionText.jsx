@@ -6,7 +6,7 @@ function IntroductionText() {
       <img src="/imgs/introtextbgImg.jpg" alt="introtextbgImg" className='absolute opacity-80 bg-transparent  w-36 md:w-60  object-cover  z-0'/>
       
       
-      <h2 className='text-zinc-300 relative w-full z-10 p-8 pt-2 lg:text-lg text-wrap backdrop-blur-sm backdrop-brightness-75 font-semibold'>About Theyyam</h2>
+      <h2 className='text-zinc-100 relative w-full z-10 p-8 pt-2 lg:text-lg text-wrap backdrop-blur-sm backdrop-brightness-75 font-semibold'>About Theyyam</h2>
 
       <p className='text-white z-10 relative p-8 pb-1 pt-2 lg:text-lg  text-wrap backdrop-blur-sm backdrop-brightness-75 font-semibold'>
         Theyyam, also known as Kaliyattam, is a vibrant and sacred Hindu religious ritual dance form originating from North Kerala, particularly in the regions of Kannur and Kasaragod. This unique art form combines elements of dance, mime, and music, serving as a profound expression of spirituality and cultural heritage for the local communities.
