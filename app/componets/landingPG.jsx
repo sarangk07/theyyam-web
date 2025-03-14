@@ -52,7 +52,7 @@ function LandingPG() {
     <div>
       <div 
         ref={(el) => setLeftW(el)} 
-        className="fixed w-[50%] left-0 h-full border-r-8 border-yellow-400 bg-black z-40 overflow-hidden"
+        className="fixed w-[50%] left-0 h-full border-r-8 border-red-700 bg-black z-40 overflow-hidden"
       >
         <div className="w-full h-full relative">
           <img 
@@ -66,7 +66,7 @@ function LandingPG() {
       
       <div 
         ref={(el) => setRightW(el)} 
-        className="fixed w-[50%] right-0 h-full border-l-8 border-yellow-400 bg-black z-40 overflow-hidden"
+        className="fixed w-[50%] right-0 h-full border-l-8 border-red-700 bg-black z-40 overflow-hidden"
       >
         <div className="w-full h-full relative">
           <img 

@@ -168,10 +168,10 @@ const [titleRef, setTitleRef] = useState(null);
 
   return (
     <div className="relative w-full h-screen overflow-hidden">
-    <div className='bg-amber-50 w-full cursor-default overflow-x-hidden h-screen'>
+    <div className='bg-red-50 w-full cursor-default overflow-x-hidden h-screen'>
       <div className='h-fit relative'>
         <div className='h-1/4'>
-        <div ref={(el) => setTitleRef(el)} className='text-right text-black text-2xl md:text-3xl font-street relative font-extrabold bg-gradient-to-b from-red-800 to-orange-400 p-4 pb-10'>
+        <div ref={(el) => setTitleRef(el)} className='text-right text-black text-2xl md:text-3xl font-street relative font-extrabold bg-gradient-to-b from-red-700 to-red-300 p-4 pb-10'>
         <div className='absolute'>
           <Swastika/>   
         </div>    
@@ -183,7 +183,7 @@ const [titleRef, setTitleRef] = useState(null);
         >
         Theyyam Festival Happening Now [With in 10 Days....]
       </h3> 
-        <div className='h-3/4 md:pt-3 font-serif pt-10 bg-gradient-to-t  from-amber-50 to-orange-400 overflow-auto'>
+        <div className='h-3/4 md:pt-3 font-serif pt-10 bg-gradient-to-t  from-amber-50 to-red-300 overflow-auto'>
           <div className='flex  justify-between w-fit mt-4'>
             
             
@@ -191,12 +191,12 @@ const [titleRef, setTitleRef] = useState(null);
             {upcomingFestivals && upcomingFestivals.length > 0 ? 
             <>
             {upcomingFestivals.map((item, index) => (
-              <div key={index} className='text-zinc-800 flex-wrap cursor-default my-5 bg-gradient-to-t from-orange-200 to-orange-600 rounded-md border-4 border-orange-200 p-5  flex flex-col items-center justify-center lg:flex-row mr-10 ml-5  w-80  lg:w-96'>
+              <div key={index} className='text-zinc-800 flex-wrap cursor-default my-5 bg-gradient-to-tl from-red-200 to-red-600 rounded-md border-4 border-red-200 p-5  flex flex-col items-center justify-center lg:flex-row mr-10 ml-5  w-80  lg:w-96'>
                 <div className='mb-4 lg:mb-2 lg:mr-5'>
                   <p className='font-bold text-zinc-50'>{item.name}</p>
                   <p className='text-xs'>Place: {item.place}</p>
                   {/* <p>Popularity: {item.popularity}</p> */}
-                  <div className='border rounded-md p-1 bg-orange-200'>
+                  <div className='border rounded-md p-1 bg-red-200'>
                     <h1 className='font-bold'>Festival <span className='text-xs'>[{item.malayala_masam ? item.malayala_masam : ''}]</span></h1>
                     <div className='text-xs flex justify-between lg:flex-col'>
                         <p>Starts: {item.festival_start_time}</p>
@@ -225,7 +225,7 @@ const [titleRef, setTitleRef] = useState(null);
             </> 
             :
             <>
-              <p className='text-orange-900 pl-4  flex justify-center items-center'>Sorry No Temples Found with Theyyams...</p>
+              <p className='text-red-900 pl-4 text-xs flex justify-center items-center'>Sorry No Temples Found with Theyyams in these days...</p>
             </>}
             
           </div>
@@ -245,21 +245,21 @@ const [titleRef, setTitleRef] = useState(null);
 
         <div>
             {choice == 'cal' ? 
-            <div className='flex justify-center items-center'>
+            <div className='flex justify-center items-center bg-gradient-to-b from-white to-red-500'>
               <Calendar templesData={temples} TodayDate={today}/>
             </div>
             
             :
 
             <>
-            <div className='flex flex-wrap justify-center pb-10 pt-10 ' >
+            <div className='flex flex-wrap justify-center pb-10 pt-10  bg-gradient-to-b from-white to bg-red-500' >
             {theyyam.map((data, index) => (
               <div key={index}
                 onClick={() => route.push(`/theyyam/${data.id}`)}
-                className='relative  cursor-pointer rounded-md border bg-zinc-300  m-2 p-4 flex flex-col items-center h-28 md:h-48 w-1/3 md:w-1/3 lg:w-1/4 xl:w-1/5' style={{filter: 'drop-shadow(8px 8px 3px rgb(253 186 116))'}}>
+                className='relative  cursor-pointer rounded-md border bg-zinc-300  m-2 p-4 flex flex-col items-center h-28 md:h-48 w-1/3 md:w-1/3 lg:w-1/4 xl:w-1/5' style={{filter: 'drop-shadow(8px 8px 3px rgb(254 202 202))'}}>
                 <img 
                   alt="" 
-                  className='absolute rounded-md inset-0 object-cover bg-orange-200 w-full  h-full z-0' 
+                  className='absolute rounded-md inset-0 object-cover bg-red-200 w-full  h-full z-0' 
                   src={(data.img ?? data.descriptions) || "./imgs/theyyamLandingPG2.png"} 
                 />
                 <p className='font-bold justify-end absolute bottom-1 p-2 z-10 bg-transparent backdrop-blur-sm rounded-md text-white text-xs md:text-lg'>{data.name || 'Not Found'}</p>

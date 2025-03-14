@@ -180,7 +180,7 @@ export const LocalTheyyamData = [
 
     {
         "created_at": "2024-12-30 04:23:37",
-        "descriptions": "https://images.keralapicnicspot.com/10-Dhoomavathi-Theyyam-1-837x1024.jpg",
+        "descriptions": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTw3ZkFS1g4IYTQxUr6psm4eR6k6z19-6K8fywG2muL4oGPy0eZ6yrAONknXpJWJI9Txk&usqp=CAU",
         "god": "Devi",
         "id": 16,
         "img": null,

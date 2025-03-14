@@ -374,6 +374,10 @@ export const LocalTempleData = [
     	"popularity ":3,  
     	"theyyams":['Thayi Paradevatha,Vairajaathan']
     },
+
+
+
+	
 	
 
 
